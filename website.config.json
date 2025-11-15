@@ -1,13 +1,13 @@
 {
   "site": {
-    "name": "Minimal Starter",
-    "tagline": "Your Creative Canvas",
-    "description": "A clean, minimal starter template providing the perfect foundation for your next project. Built with modern tools and ready for your creativity.",
-    "ogImage": "/og-image.png",
+    "name": "Moto3 Training Pro",
+    "tagline": "Professional Training Management for Moto3 Pilots",
+    "description": "Complete training, recovery, and performance tracking system designed specifically for professional Moto3 pilots. Track workouts, monitor recovery, and optimize performance over an 18-week training cycle.",
+    "ogImage": "/moto3-hero.png",
     "twitterHandle": "",
     "contact": {
-      "email": "contact@example.com",
-      "company": "Your Company",
+      "email": "contact@moto3training.pro",
+      "company": "Moto3 Training Pro",
       "address": ""
     },
     "legal": {
