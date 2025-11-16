@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "my-react-app",
+  "name": "moto3-training-app",
   "main": "worker/index.ts",
   "compatibility_flags": ["nodejs_compat"],
   "compatibility_date": "2025-08-23",
