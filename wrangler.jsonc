@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "moto3-training-app",
+  "name": "moto3-app-2025-v1",
   "main": "worker/index.ts",
   "compatibility_flags": ["nodejs_compat"],
   "compatibility_date": "2025-08-23",
