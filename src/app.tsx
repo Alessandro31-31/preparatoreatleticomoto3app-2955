@@ -7,6 +7,7 @@ import Chat from "@/pages/chat";
 import Dashboard from "@/pages/dashboard";
 import Home from "@/pages/home";
 import PreparationRecovery from "@/pages/preparation";
+import Profile from "@/pages/profile";
 import ProgressAnalysis from "@/pages/progress";
 import RedFlags from "@/pages/red-flags";
 import MorningRoutine from "@/pages/routine";
@@ -80,6 +81,14 @@ export function App() {
           element={
             <RequireAuth>
               <RedFlags />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <RequireAuth>
+              <Profile />
             </RequireAuth>
           }
         />

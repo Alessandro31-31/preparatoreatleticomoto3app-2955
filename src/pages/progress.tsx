@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { apiClient } from "@/lib/api-client";
+import { exportProgressReport } from "@/lib/export-pdf";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -76,9 +77,13 @@ export default function ProgressAnalysis() {
     "Trap Bar Jump",
   ];
 
-  const exportPDF = () => {
-    // In a real app, this would generate and download a PDF
-    alert("Funzionalità PDF in sviluppo. Verranno esportati tutti i dati di progressione.");
+  const exportPDF = async () => {
+    await exportProgressReport({
+      biometrics: biometrics?.biometrics,
+      routines: routines?.routines,
+      progressions: progressions?.progressions,
+      loads: loads?.loads,
+    }, "Pilota Moto3");
   };
 
   const weightData = biometrics?.biometrics?.filter((b: any) => b.weight) || [];
