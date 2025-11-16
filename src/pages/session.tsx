@@ -76,6 +76,26 @@ const exerciseTemplates = {
     { name: "Lateral Bound", category: "Power", sets: 3, reps: "6/lato", rest: 90, muscleFocus: "Potenza laterale" },
     { name: "Single-Leg RDL", category: "Stability", sets: 3, reps: "8/lato", targetWeight: 16, rest: 60, muscleFocus: "Equilibrio, Ischio" },
   ],
+  "Conditioning / Active Recovery": [
+    { name: "Bike Steady State", category: "Cardio", sets: 1, duration: 20, rest: 0, muscleFocus: "Recupero attivo cardiovascolare" },
+    { name: "Rowing Intervals", category: "Conditioning", sets: 5, reps: "2 min", rest: 60, muscleFocus: "Capacità aerobica" },
+    { name: "Medicine Ball Slams", category: "Conditioning", sets: 3, reps: "15", targetWeight: 8, rest: 45, muscleFocus: "Potenza full body" },
+    { name: "Yoga Flow", category: "Mobility", sets: 1, duration: 15, rest: 0, muscleFocus: "Mobilità e recupero" },
+  ],
+  "Full Body / Skill Work": [
+    { name: "Hex Bar Deadlift", category: "Strength", sets: 4, reps: "5", targetWeight: 100, rest: 180, muscleFocus: "Full body pull" },
+    { name: "Push Press", category: "Power", sets: 4, reps: "5", targetWeight: 45, rest: 150, muscleFocus: "Potenza upper body" },
+    { name: "Goblet Squat", category: "Strength", sets: 3, reps: "12", targetWeight: 24, rest: 90, muscleFocus: "Quadricipiti, mobilità" },
+    { name: "Turkish Get-Up", category: "Skill", sets: 3, reps: "3/lato", targetWeight: 16, rest: 120, muscleFocus: "Stabilità full body" },
+    { name: "Sled Push", category: "Conditioning", sets: 4, reps: "30m", targetWeight: 50, rest: 120, muscleFocus: "Potenza lower, conditioning" },
+  ],
+  "Rest / Stretching": [
+    { name: "Hip Flexor Stretch", category: "Stretching", sets: 2, reps: "60s/lato", rest: 0, muscleFocus: "Flessori anca" },
+    { name: "Hamstring Stretch", category: "Stretching", sets: 2, reps: "60s/lato", rest: 0, muscleFocus: "Ischio-crurali" },
+    { name: "Quad Stretch", category: "Stretching", sets: 2, reps: "45s/lato", rest: 0, muscleFocus: "Quadricipiti" },
+    { name: "Thoracic Rotation", category: "Mobility", sets: 2, reps: "10/lato", rest: 0, muscleFocus: "Mobilità toracica" },
+    { name: "Child's Pose", category: "Stretching", sets: 1, duration: 120, rest: 0, muscleFocus: "Rilassamento, lower back" },
+  ],
 };
 
 export default function SessionDetail() {

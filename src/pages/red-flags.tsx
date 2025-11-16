@@ -119,6 +119,16 @@ export default function RedFlags() {
     return severityLevels.find((s) => s.value === severity) || severityLevels[0];
   };
 
+  const getSeverityBorderClass = (severity: string) => {
+    const borderClasses: Record<string, string> = {
+      low: "border-l-yellow-500",
+      medium: "border-l-orange-500",
+      high: "border-l-red-500",
+      critical: "border-l-red-900",
+    };
+    return borderClasses[severity] || "border-l-yellow-500";
+  };
+
   const getCategoryIcon = (category: string) => {
     const cat = flagCategories.find((c) => c.value === category);
     return cat ? cat.icon : Info;
@@ -249,7 +259,7 @@ export default function RedFlags() {
                 <Card
                   key={flag.id}
                   className={`border-l-4 ${
-                    flag.resolved ? "border-l-green-500" : `border-l-${severityInfo.color.split("-")[1]}-500`
+                    flag.resolved ? "border-l-green-500" : getSeverityBorderClass(flag.severity)
                   }`}
                 >
                   <CardHeader>
