@@ -24,8 +24,7 @@
     {
       "binding": "D1",
       "database_name": "moto3-training-db",
-      "database_id": "preview",
-      "preview_database_id": "preview",
+      "database_id": "7b8ece38-8b9e-4d95-9ee5-df0a6335d015",
     },
   ],
 }
