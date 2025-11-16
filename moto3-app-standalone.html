@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto3 Training Pro</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; }
+        .container { max-width: 100%; padding: 20px; }
+        h1 { font-size: 2rem; margin-bottom: 1rem; color: #ef4444; }
+        .card { background: #1a1a1a; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid #333; }
+        .card h2 { color: #ef4444; margin-bottom: 10px; font-size: 1.3rem; }
+        .card p { color: #999; margin-bottom: 15px; }
+        .btn { background: #ef4444; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1rem; cursor: pointer; width: 100%; margin-top: 10px; }
+        .btn:active { background: #dc2626; }
+        .nav { position: fixed; bottom: 0; left: 0; right: 0; background: #1a1a1a; border-top: 1px solid #333; display: flex; justify-content: space-around; padding: 10px 0; }
+        .nav-item { text-align: center; color: #666; font-size: 0.75rem; padding: 5px; cursor: pointer; }
+        .nav-item.active { color: #ef4444; }
+        .nav-icon { font-size: 1.5rem; display: block; margin-bottom: 3px; }
+        .content { padding-bottom: 80px; }
+        .badge { display: inline-block; background: #ef4444; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
+        .stat { text-align: center; }
+        .stat-value { font-size: 2.5rem; font-weight: bold; color: #ef4444; }
+        .stat-label { color: #666; font-size: 0.9rem; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .timer { text-align: center; font-size: 4rem; font-weight: bold; margin: 30px 0; }
+        .progress { background: #333; height: 8px; border-radius: 4px; overflow: hidden; margin: 10px 0; }
+        .progress-bar { background: #ef4444; height: 100%; transition: width 0.3s; }
+        input, select { width: 100%; padding: 12px; background: #0a0a0a; border: 1px solid #333; border-radius: 8px; color: white; margin-top: 5px; font-size: 1rem; }
+        label { display: block; margin-top: 15px; color: #999; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content" id="content">
+            <!-- Dashboard -->
+            <div id="dashboard" class="page">
+                <h1>🏍️ Moto3 Training Pro</h1>
+
+                <div class="card">
+                    <h2>Panoramica</h2>
+                    <div class="grid">
+                        <div class="stat">
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Settimana</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">--</div>
+                            <div class="stat-label">HRV (ms)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Mattutina di Routine</h2>
+                    <p>12 minuti di mobilità guidata</p>
+                    <button class="btn" onclick="showPage('routine')">Inizia Routine</button>
+                </div>
+
+                <div class="card">
+                    <h2>Calendario 18 Settimane</h2>
+                    <p>Programma completo mesocicli</p>
+                    <button class="btn" onclick="showPage('calendar')">Vedi Calendario</button>
+                </div>
+
+                <div class="card">
+                    <h2>Tools & Monitoring</h2>
+                    <p>Timer, ACR, HRV, Readiness</p>
+                    <button class="btn" onclick="showPage('tools')">Apri Tools</button>
+                </div>
+            </div>
+
+            <!-- Routine -->
+            <div id="routine" class="page" style="display:none">
+                <h1>Mattutina di Routine</h1>
+
+                <div class="card">
+                    <h2>Cat-Cow</h2>
+                    <p>2 × 15 ripetizioni • 90 secondi</p>
+                    <div class="timer" id="timer">1:30</div>
+                    <button class="btn" onclick="startTimer(90)">Start</button>
+                </div>
+
+                <div class="card">
+                    <h2>Glute Bridge</h2>
+                    <p>3 × 12 ripetizioni • 120 secondi</p>
+                    <button class="btn" onclick="startTimer(120)">Start</button>
+                </div>
+
+                <div class="card">
+                    <h2>Dead Bug</h2>
+                    <p>3 × 8 ripetizioni • 120 secondi</p>
+                    <button class="btn" onclick="startTimer(120)">Start</button>
+                </div>
+            </div>
+
+            <!-- Calendar -->
+            <div id="calendar" class="page" style="display:none">
+                <h1>Calendario 18 Settimane</h1>
+
+                <div class="card">
+                    <h2>Settimane 1-3</h2>
+                    <span class="badge">Anatomical Adaptation</span>
+                    <p style="margin-top:10px">Focus: Movement patterns, technique</p>
+                </div>
+
+                <div class="card">
+                    <h2>Settimana 4</h2>
+                    <span class="badge" style="background:#22c55e">Deload 1</span>
+                    <p style="margin-top:10px">Recupero attivo</p>
+                </div>
+
+                <div class="card">
+                    <h2>Settimane 5-7</h2>
+                    <span class="badge" style="background:#a855f7">Hypertrophy</span>
+                    <p style="margin-top:10px">Focus: Muscle mass, endurance</p>
+                </div>
+
+                <div class="card">
+                    <h2>Settimana 8</h2>
+                    <span class="badge" style="background:#22c55e">Deload 2</span>
+                </div>
+
+                <div class="card">
+                    <h2>Settimane 9-11</h2>
+                    <span class="badge" style="background:#dc2626">Strength + Power</span>
+                    <p style="margin-top:10px">Focus: Max strength, explosive power</p>
+                </div>
+
+                <div class="card">
+                    <h2>Settimane 17-18</h2>
+                    <span class="badge" style="background:#eab308">Competition Peak</span>
+                    <p style="margin-top:10px">🏆 Pronto per la stagione!</p>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div id="tools" class="page" style="display:none">
+                <h1>Tools & Monitoring</h1>
+
+                <div class="card">
+                    <h2>Timer Multi-Intervallo</h2>
+                    <label>Work (secondi)</label>
+                    <input type="number" id="work" value="30">
+                    <label>Rest (secondi)</label>
+                    <input type="number" id="rest" value="30">
+                    <label>Rounds</label>
+                    <input type="number" id="rounds" value="8">
+                    <button class="btn" onclick="startIntervalTimer()">Start Timer</button>
+                </div>
+
+                <div class="card">
+                    <h2>Calcolatore ACR</h2>
+                    <label>RPE (1-10)</label>
+                    <input type="number" id="rpe" value="7" min="1" max="10">
+                    <label>Durata (minuti)</label>
+                    <input type="number" id="duration" value="60">
+                    <button class="btn" onclick="calculateACR()">Calcola</button>
+                    <div id="acr-result" style="margin-top:20px;text-align:center"></div>
+                </div>
+
+                <div class="card">
+                    <h2>Monitor HRV</h2>
+                    <label>HRV di oggi (ms)</label>
+                    <input type="number" id="hrv" placeholder="Inserisci valore">
+                    <button class="btn" onclick="checkHRV()">Valuta</button>
+                    <div id="hrv-result" style="margin-top:20px;text-align:center"></div>
+                </div>
+            </div>
+
+            <!-- Progress -->
+            <div id="progress" class="page" style="display:none">
+                <h1>Progressi</h1>
+
+                <div class="card">
+                    <h2>Statistiche</h2>
+                    <div class="stat">
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">Sessioni Completate</div>
+                    </div>
+                    <div class="progress" style="margin-top:20px">
+                        <div class="progress-bar" style="width:0%"></div>
+                    </div>
+                    <p style="text-align:center;margin-top:10px">0% completamento programma</p>
+                </div>
+
+                <div class="card">
+                    <h2>Prossimi Obiettivi</h2>
+                    <p>✓ Completare routine mattutina</p>
+                    <p>✓ Registrare HRV giornaliero</p>
+                    <p>✓ Completare allenamento settimana 12</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="nav">
+            <div class="nav-item active" onclick="showPage('dashboard')">
+                <span class="nav-icon">🏠</span>
+                Home
+            </div>
+            <div class="nav-item" onclick="showPage('calendar')">
+                <span class="nav-icon">📅</span>
+                Calendar
+            </div>
+            <div class="nav-item" onclick="showPage('tools')">
+                <span class="nav-icon">⚙️</span>
+                Tools
+            </div>
+            <div class="nav-item" onclick="showPage('progress')">
+                <span class="nav-icon">📊</span>
+                Progress
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timerInterval;
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            event.target.closest('.nav-item').classList.add('active');
+        }
+
+        function startTimer(seconds) {
+            clearInterval(timerInterval);
+            let remaining = seconds;
+            const timerEl = document.getElementById('timer');
+
+            timerInterval = setInterval(() => {
+                const mins = Math.floor(remaining / 60);
+                const secs = remaining % 60;
+                timerEl.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+
+                if (remaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert('Esercizio completato!');
+                }
+                remaining--;
+            }, 1000);
+        }
+
+        function calculateACR() {
+            const rpe = parseInt(document.getElementById('rpe').value);
+            const duration = parseInt(document.getElementById('duration').value);
+            const dailyLoad = rpe * duration;
+
+            document.getElementById('acr-result').innerHTML = `
+                <div class="stat-value">${dailyLoad}</div>
+                <div class="stat-label">Carico Giornaliero (RPE × min)</div>
+            `;
+        }
+
+        function checkHRV() {
+            const hrv = parseInt(document.getElementById('hrv').value);
+            let status, color;
+
+            if (hrv >= 55) {
+                status = 'Recupero Ottimale';
+                color = '#22c55e';
+            } else if (hrv >= 45) {
+                status = 'Recupero Discreto';
+                color = '#eab308';
+            } else {
+                status = 'Necessario Riposo';
+                color = '#ef4444';
+            }
+
+            document.getElementById('hrv-result').innerHTML = `
+                <div class="stat-value" style="color:${color}">${hrv}ms</div>
+                <div class="badge" style="background:${color}">${status}</div>
+            `;
+        }
+
+        function startIntervalTimer() {
+            const work = parseInt(document.getElementById('work').value);
+            const rest = parseInt(document.getElementById('rest').value);
+            const rounds = parseInt(document.getElementById('rounds').value);
+
+            alert(`Timer: ${work}s work / ${rest}s rest × ${rounds} rounds\n\nFunzione completa disponibile nella versione full!`);
+        }
+    </script>
+</body>
+</html>
