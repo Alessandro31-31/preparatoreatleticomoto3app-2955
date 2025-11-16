@@ -1,4 +1,33 @@
-# Moto3 Pilot Trainer - Progetto Completo
+# 📱 Moto3 Pilot Trainer - App Mobile Completa
+
+App completa per l'allenamento dei piloti Moto3 con tutte le funzionalità disponibili!
+
+## 🎯 CREA L'APK IN 1 CLICK - Funziona SEMPRE sul Telefono!
+
+### ✅ METODO RAPIDO (CONSIGLIATO)
+
+**Su Windows:**
+1. Scarica questo progetto (bottone verde "Code" → "Download ZIP")
+2. Estrai sul Desktop
+3. **Doppio click** su `CREA-APK-AUTOMATICO.bat`
+4. Crea account Expo gratuito se non ce l'hai (30 secondi)
+5. Aspetta 10-15 minuti
+6. Ricevi link per scaricare APK via email
+7. Installa sul telefono
+8. **Usa l'app SEMPRE!** 🎉
+
+**Su Mac/Linux:**
+```bash
+./CREA-APK-AUTOMATICO.sh
+```
+
+### 📖 Guide Complete
+
+- **[GUIDA WINDOWS COMPLETA](GUIDA-WINDOWS-COMPLETA.md)** - Passo passo per Windows
+- **[Guida Creazione APK](CREA-APK-COMPLETO.md)** - Tutti i metodi disponibili
+- **[Quick Start](QUICK_START.md)** - Avvio rapido con Expo Go
+
+---
 
 Repository contenente l'app mobile professionale completa per l'allenamento di piloti Moto3.
 
