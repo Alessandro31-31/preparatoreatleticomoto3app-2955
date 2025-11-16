@@ -1,0 +1,143 @@
+═══════════════════════════════════════════════════════════════
+  ISTRUZIONI PER WINDOWS - MOTO3 PILOT TRAINER
+═══════════════════════════════════════════════════════════════
+
+🪟 SE USI WINDOWS, SEGUI QUESTE ISTRUZIONI:
+
+═══════════════════════════════════════════════════════════════
+
+📂 PASSO 1: Apri la Cartella del Progetto
+───────────────────────────────────────────────────────────────
+
+1. Apri Esplora Risorse (Windows Explorer)
+2. Vai alla cartella del progetto
+3. Dovresti vedere la cartella "mobile-app"
+
+═══════════════════════════════════════════════════════════════
+
+⚡ METODO 1: Doppio Click (PIÙ FACILE)
+───────────────────────────────────────────────────────────────
+
+1. Trova il file: AVVIA-WINDOWS.bat
+2. Fai DOPPIO CLICK su AVVIA-WINDOWS.bat
+3. Si aprirà il terminale e l'app si avvierà
+4. Aspetta il QR code
+
+═══════════════════════════════════════════════════════════════
+
+💻 METODO 2: Prompt dei Comandi (CMD)
+───────────────────────────────────────────────────────────────
+
+1. Tasto Windows + R
+2. Scrivi: cmd
+3. Premi Invio
+4. Copia e incolla questo comando:
+
+   cd C:\percorso\della\cartella\mobile-app
+   npm start
+
+   (Sostituisci C:\percorso\della\cartella\ con il tuo percorso)
+
+═══════════════════════════════════════════════════════════════
+
+🔍 METODO 3: Dalla Cartella mobile-app
+───────────────────────────────────────────────────────────────
+
+1. Apri Esplora Risorse
+2. Entra nella cartella "mobile-app"
+3. Nella barra degli indirizzi in alto, scrivi: cmd
+4. Premi Invio (si apre il terminale in quella cartella)
+5. Scrivi: npm start
+6. Premi Invio
+
+═══════════════════════════════════════════════════════════════
+
+📱 DOPO L'AVVIO
+───────────────────────────────────────────────────────────────
+
+1. Vedrai un QR CODE nel terminale
+2. Apri EXPO GO sul telefono
+3. Scansiona il QR code
+4. Aspetta 10-30 secondi
+5. L'app si apre! 🎉
+
+═══════════════════════════════════════════════════════════════
+
+🆘 PROBLEMI COMUNI SU WINDOWS
+───────────────────────────────────────────────────────────────
+
+❌ "npm non è riconosciuto"
+   → Installa Node.js da: https://nodejs.org/
+   → Riavvia il terminale dopo l'installazione
+
+❌ "Impossibile trovare il percorso"
+   → Verifica di essere nella cartella giusta
+   → Usa Esplora Risorse per trovare mobile-app
+   → Usa il Metodo 3 (cmd dalla barra indirizzi)
+
+❌ Errori di permessi
+   → Esegui CMD come Amministratore
+   → Tasto destro su CMD → "Esegui come amministratore"
+
+❌ Porta 8081 già in uso
+   → Apri Task Manager (Ctrl+Shift+Esc)
+   → Trova processi Node.js
+   → Termina processi Node.js
+   → Riprova npm start
+
+═══════════════════════════════════════════════════════════════
+
+💡 PERCORSI COMUNI SU WINDOWS
+───────────────────────────────────────────────────────────────
+
+La cartella potrebbe essere in:
+
+• C:\Users\TuoNome\preparatoreatleticomoto3app-2955\mobile-app
+• C:\Users\TuoNome\Desktop\preparatoreatleticomoto3app-2955\mobile-app
+• C:\Users\TuoNome\Documents\preparatoreatleticomoto3app-2955\mobile-app
+
+═══════════════════════════════════════════════════════════════
+
+🔧 VERIFICA INSTALLAZIONI
+───────────────────────────────────────────────────────────────
+
+Apri CMD e verifica:
+
+1. Node.js installato:
+   node --version
+
+   Deve mostrare: v18 o superiore
+
+2. npm installato:
+   npm --version
+
+   Deve mostrare: v9 o superiore
+
+Se non sono installati:
+→ Scarica Node.js da: https://nodejs.org/
+
+═══════════════════════════════════════════════════════════════
+
+✅ COMANDO FINALE (Copia questo)
+───────────────────────────────────────────────────────────────
+
+Metodo 1: Doppio click su AVVIA-WINDOWS.bat
+
+Metodo 2: Dalla cartella mobile-app in CMD:
+   npm start
+
+═══════════════════════════════════════════════════════════════
+
+📹 PASSO-PASSO VISUALE
+───────────────────────────────────────────────────────────────
+
+1. Apri la cartella del progetto in Esplora Risorse
+2. Vedi "mobile-app"? Entraci
+3. Nella barra indirizzi in alto scrivi: cmd
+4. Premi Invio
+5. Nel terminale che si apre scrivi: npm start
+6. Premi Invio
+7. Aspetta il QR code
+8. Scansiona con Expo Go
+
+═══════════════════════════════════════════════════════════════
