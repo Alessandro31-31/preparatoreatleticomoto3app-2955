@@ -9,6 +9,9 @@ import { routineRoutes } from "./routine-routes";
 import { biometricRoutes } from "./biometric-routes";
 import { flagRoutes } from "./flag-routes";
 import { progressionRoutes } from "./progression-routes";
+import { recoveryRoutes } from "./recovery-routes";
+import { calendarRoutes } from "./calendar-routes";
+import { toolsRoutes } from "./tools-routes";
 
 export const apiRoutes = new Hono<HonoContext>()
   .route("/admin", adminRoutes)
@@ -19,4 +22,7 @@ export const apiRoutes = new Hono<HonoContext>()
   .route("/routine", routineRoutes)
   .route("/biometrics", biometricRoutes)
   .route("/flags", flagRoutes)
-  .route("/progressions", progressionRoutes);
+  .route("/progressions", progressionRoutes)
+  .route("/recovery", recoveryRoutes)
+  .route("/calendar", calendarRoutes)
+  .route("/tools", toolsRoutes);

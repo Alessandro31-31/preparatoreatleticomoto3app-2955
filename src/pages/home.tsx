@@ -383,25 +383,37 @@ export default function Home() {
                 <Button asChild variant="outline" className="h-auto flex-col py-4">
                   <Link to="/calendar">
                     <Calendar className="w-6 h-6 mb-2" />
-                    <span className="text-sm">18-Week Calendar</span>
+                    <span className="text-sm">Calendario 18 Settimane</span>
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="h-auto flex-col py-4">
                   <Link to="/tools">
                     <Timer className="w-6 h-6 mb-2" />
-                    <span className="text-sm">Interval Timer</span>
+                    <span className="text-sm">Strumenti</span>
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="h-auto flex-col py-4">
-                  <Link to="/preparation">
+                  <Link to="/recovery">
                     <Activity className="w-6 h-6 mb-2" />
-                    <span className="text-sm">Prep & Recovery</span>
+                    <span className="text-sm">Prep & Recupero</span>
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="h-auto flex-col py-4">
-                  <Link to="/progress">
+                  <Link to="/progressions">
+                    <Target className="w-6 h-6 mb-2" />
+                    <span className="text-sm">Progressioni</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="h-auto flex-col py-4">
+                  <Link to="/analytics">
                     <BarChart3 className="w-6 h-6 mb-2" />
-                    <span className="text-sm">Progress</span>
+                    <span className="text-sm">Analytics</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="h-auto flex-col py-4">
+                  <Link to="/chat">
+                    <Wrench className="w-6 h-6 mb-2" />
+                    <span className="text-sm">AI Coach</span>
                   </Link>
                 </Button>
               </div>

@@ -152,3 +152,123 @@ export const settings = sqliteTable("settings", {
   createdAt: text("created_at").notNull().default(sql`(datetime('now'))`),
   updatedAt: text("updated_at").notNull().default(sql`(datetime('now'))`),
 });
+
+// Protocolli di preparazione e recupero
+export const recoveryProtocols = sqliteTable("recovery_protocols", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  userId: text("user_id").notNull(),
+  type: text("type").notNull(), // 'warmup', 'cooldown', 'stretching', 'foam_rolling'
+  name: text("name").notNull(),
+  description: text("description"),
+  duration: integer("duration"), // in minuti
+  exercises: text("exercises"), // JSON array di esercizi
+  instructions: text("instructions"),
+  videoUrl: text("video_url"),
+  order: integer("order").notNull().default(0),
+  isActive: integer("is_active").notNull().default(1),
+  createdAt: text("created_at").notNull().default(sql`(datetime('now'))`),
+  updatedAt: text("updated_at").notNull().default(sql`(datetime('now'))`),
+});
+
+// Esecuzioni dei protocolli di recupero
+export const recoveryProtocolLogs = sqliteTable("recovery_protocol_logs", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  userId: text("user_id").notNull(),
+  protocolId: integer("protocol_id").notNull(),
+  date: text("date").notNull(),
+  duration: integer("duration"), // durata effettiva
+  completed: integer("completed").notNull().default(1),
+  notes: text("notes"),
+  createdAt: text("created_at").notNull().default(sql`(datetime('now'))`),
+});
+
+// Template per routine mattutina
+export const morningRoutineTemplates = sqliteTable("morning_routine_templates", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  userId: text("user_id").notNull(),
+  name: text("name").notNull(),
+  description: text("description"),
+  exercises: text("exercises"), // JSON array con esercizi dettagliati
+  estimatedDuration: integer("estimated_duration"),
+  order: integer("order").notNull().default(0),
+  isDefault: integer("is_default").notNull().default(0),
+  createdAt: text("created_at").notNull().default(sql`(datetime('now'))`),
+  updatedAt: text("updated_at").notNull().default(sql`(datetime('now'))`),
+});
+
+// Calendario settimanale strutturato (18 settimane)
+export const weeklyCalendar = sqliteTable("weekly_calendar", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  userId: text("user_id").notNull(),
+  weekNumber: integer("week_number").notNull(), // 1-18
+  weekStartDate: text("week_start_date").notNull(),
+  weekEndDate: text("week_end_date").notNull(),
+  phase: text("phase"), // 'base', 'build', 'peak', 'taper', 'race', 'recovery'
+  focusArea: text("focus_area"), // 'strength', 'endurance', 'power', 'technique', 'recovery'
+  targetWeeklyLoad: real("target_weekly_load"),
+  actualWeeklyLoad: real("actual_weekly_load"),
+  notes: text("notes"),
+  createdAt: text("created_at").notNull().default(sql`(datetime('now'))`),
+  updatedAt: text("updated_at").notNull().default(sql`(datetime('now'))`),
+});
+
+// Sessioni giornaliere programmate
+export const dailySchedule = sqliteTable("daily_schedule", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  userId: text("user_id").notNull(),
+  weekId: integer("week_id").notNull(),
+  date: text("date").notNull(),
+  dayOfWeek: integer("day_of_week").notNull(), // 1-7
+  sessionType: text("session_type").notNull(), // 'training', 'recovery', 'rest', 'testing'
+  plannedSessions: text("planned_sessions"), // JSON array di sessioni programmate
+  completed: integer("completed").notNull().default(0),
+  notes: text("notes"),
+  createdAt: text("created_at").notNull().default(sql`(datetime('now'))`),
+  updatedAt: text("updated_at").notNull().default(sql`(datetime('now'))`),
+});
+
+// Timer e intervalli multi-fase
+export const timerPresets = sqliteTable("timer_presets", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  userId: text("user_id").notNull(),
+  name: text("name").notNull(),
+  intervals: text("intervals"), // JSON array con fasi: [{type: 'work', duration: 300}, {type: 'rest', duration: 60}]
+  totalDuration: integer("total_duration"),
+  description: text("description"),
+  isDefault: integer("is_default").notNull().default(0),
+  createdAt: text("created_at").notNull().default(sql`(datetime('now'))`),
+  updatedAt: text("updated_at").notNull().default(sql`(datetime('now'))`),
+});
+
+// Dati corporei per grafici progressione
+export const bodyMetrics = sqliteTable("body_metrics", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  userId: text("user_id").notNull(),
+  date: text("date").notNull(),
+  weight: real("weight"),
+  bodyFat: real("body_fat"),
+  muscleMass: real("muscle_mass"),
+  hydration: real("hydration"),
+  neckCircumference: real("neck_circumference"),
+  shoulderWidth: real("shoulder_width"),
+  chestCircumference: real("chest_circumference"),
+  waistCircumference: real("waist_circumference"),
+  hipCircumference: real("hip_circumference"),
+  thighCircumference: real("thigh_circumference"),
+  calfCircumference: real("calf_circumference"),
+  notes: text("notes"),
+  createdAt: text("created_at").notNull().default(sql`(datetime('now'))`),
+});
+
+// Riferimenti rapidi e note tecniche
+export const quickReferences = sqliteTable("quick_references", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  userId: text("user_id").notNull(),
+  category: text("category").notNull(), // 'technique', 'nutrition', 'recovery', 'warmup', 'injury'
+  title: text("title").notNull(),
+  content: text("content").notNull(),
+  tags: text("tags"), // JSON array
+  isPinned: integer("is_pinned").notNull().default(0),
+  createdAt: text("created_at").notNull().default(sql`(datetime('now'))`),
+  updatedAt: text("updated_at").notNull().default(sql`(datetime('now'))`),
+});

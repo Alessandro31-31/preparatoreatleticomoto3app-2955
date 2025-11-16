@@ -3,7 +3,7 @@ import { z } from "zod";
 import { zValidator } from "@hono/zod-validator";
 import { authenticatedOnly } from "../middleware/auth";
 import type { HonoContext } from "../types";
-import { morningRoutines } from "../db/schema";
+import { morningRoutines, morningRoutineTemplates } from "../db/schema";
 import { eq, and, gte, lte, desc } from "drizzle-orm";
 
 export const routineRoutes = new Hono<HonoContext>()
@@ -81,4 +81,124 @@ export const routineRoutes = new Hono<HonoContext>()
 
       return c.json({ routine });
     }
-  );
+  )
+  // Template routes
+  .get("/templates", async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+
+    const templates = await db
+      .select()
+      .from(morningRoutineTemplates)
+      .where(eq(morningRoutineTemplates.userId, user.id))
+      .orderBy(desc(morningRoutineTemplates.order));
+
+    return c.json({ templates });
+  })
+  .get("/templates/:id", async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const id = parseInt(c.req.param("id"));
+
+    const [template] = await db
+      .select()
+      .from(morningRoutineTemplates)
+      .where(
+        and(
+          eq(morningRoutineTemplates.id, id),
+          eq(morningRoutineTemplates.userId, user.id)
+        )
+      )
+      .limit(1);
+
+    if (!template) {
+      return c.json({ error: "Template not found" }, 404);
+    }
+
+    return c.json({ template });
+  })
+  .post(
+    "/templates",
+    zValidator(
+      "json",
+      z.object({
+        name: z.string(),
+        description: z.string().optional(),
+        exercises: z.string(), // JSON string
+        estimatedDuration: z.number().optional(),
+        order: z.number().default(0),
+        isDefault: z.number().default(0),
+      })
+    ),
+    async (c) => {
+      const db = c.get("db");
+      const user = c.get("user");
+      const data = c.req.valid("json");
+
+      const [template] = await db
+        .insert(morningRoutineTemplates)
+        .values({
+          ...data,
+          userId: user.id,
+        })
+        .returning();
+
+      return c.json({ template });
+    }
+  )
+  .put(
+    "/templates/:id",
+    zValidator(
+      "json",
+      z.object({
+        name: z.string().optional(),
+        description: z.string().optional(),
+        exercises: z.string().optional(),
+        estimatedDuration: z.number().optional(),
+        order: z.number().optional(),
+        isDefault: z.number().optional(),
+      })
+    ),
+    async (c) => {
+      const db = c.get("db");
+      const user = c.get("user");
+      const id = parseInt(c.req.param("id"));
+      const data = c.req.valid("json");
+
+      const [template] = await db
+        .update(morningRoutineTemplates)
+        .set({
+          ...data,
+          updatedAt: new Date().toISOString(),
+        })
+        .where(
+          and(
+            eq(morningRoutineTemplates.id, id),
+            eq(morningRoutineTemplates.userId, user.id)
+          )
+        )
+        .returning();
+
+      if (!template) {
+        return c.json({ error: "Template not found" }, 404);
+      }
+
+      return c.json({ template });
+    }
+  )
+  .delete("/templates/:id", async (c) => {
+    const db = c.get("db");
+    const user = c.get("user");
+    const id = parseInt(c.req.param("id"));
+
+    await db
+      .delete(morningRoutineTemplates)
+      .where(
+        and(
+          eq(morningRoutineTemplates.id, id),
+          eq(morningRoutineTemplates.userId, user.id)
+        )
+      );
+
+    return c.json({ success: true });
+  });
