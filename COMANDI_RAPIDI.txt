@@ -1,0 +1,51 @@
+═══════════════════════════════════════════════════════
+  COMANDI RAPIDI - MOTO3 PILOT TRAINER
+═══════════════════════════════════════════════════════
+
+📱 AVVIARE L'APP
+───────────────────────────────────────────────────────
+cd /home/user/preparatoreatleticomoto3app-2955/mobile-app
+npm start
+
+📱 OPPURE USA LO SCRIPT AUTOMATICO
+───────────────────────────────────────────────────────
+cd /home/user/preparatoreatleticomoto3app-2955
+./AVVIA_APP.sh
+
+🌐 SOLO WEB (BROWSER)
+───────────────────────────────────────────────────────
+cd /home/user/preparatoreatleticomoto3app-2955/mobile-app
+npm run web
+
+📱 CON ANDROID
+───────────────────────────────────────────────────────
+cd /home/user/preparatoreatleticomoto3app-2955/mobile-app
+npm run android
+
+📱 CON iOS (solo Mac)
+───────────────────────────────────────────────────────
+cd /home/user/preparatoreatleticomoto3app-2955/mobile-app
+npm run ios
+
+🧹 PULIRE CACHE
+───────────────────────────────────────────────────────
+cd /home/user/preparatoreatleticomoto3app-2955/mobile-app
+npm start -- --clear
+
+🔧 REINSTALLARE DIPENDENZE
+───────────────────────────────────────────────────────
+cd /home/user/preparatoreatleticomoto3app-2955/mobile-app
+rm -rf node_modules
+npm install --legacy-peer-deps
+
+⛔ FERMARE L'APP
+───────────────────────────────────────────────────────
+Premi: Ctrl + C
+
+═══════════════════════════════════════════════════════
+
+💡 SUGGERIMENTO: Usa lo script automatico per iniziare!
+
+    ./AVVIA_APP.sh
+
+═══════════════════════════════════════════════════════
