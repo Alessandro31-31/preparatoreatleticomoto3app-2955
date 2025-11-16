@@ -1,0 +1,196 @@
+═══════════════════════════════════════════════════════════════
+  📱 COME CREARE L'APP STANDALONE (Funziona senza PC)
+═══════════════════════════════════════════════════════════════
+
+🎯 PROBLEMA:
+Con Expo Go, quando spengi il PC, l'app non funziona più.
+
+✅ SOLUZIONE:
+Creare un APK/IPA che puoi installare e usare SEMPRE!
+
+═══════════════════════════════════════════════════════════════
+
+🚀 METODO 1: Script Automatico (PIÙ FACILE)
+───────────────────────────────────────────────────────────────
+
+Copia e incolla questo comando:
+
+    ./CREA-APK.sh
+
+Lo script farà tutto automaticamente!
+
+───────────────────────────────────────────────────────────────
+
+
+📋 METODO 2: Manuale Passo-Passo
+───────────────────────────────────────────────────────────────
+
+PASSO 1: Installa EAS CLI
+
+    npm install -g eas-cli
+
+PASSO 2: Login Expo (crea account se non ce l'hai)
+
+    cd mobile-app
+    eas login
+
+    Account gratis: https://expo.dev/signup
+
+PASSO 3: Configura progetto
+
+    eas build:configure
+
+PASSO 4: Crea l'APK
+
+    eas build --platform android --profile preview
+
+    Tempo: 10-15 minuti
+    Riceverai un link per scaricare l'APK!
+
+PASSO 5: Installa sul telefono
+
+    1. Apri il link sul telefono
+    2. Scarica l'APK
+    3. Permetti installazione da fonti sconosciute
+    4. Installa
+    5. Usa l'app SEMPRE! 🎉
+
+───────────────────────────────────────────────────────────────
+
+
+⚡ METODO 3: Build Locale Veloce (Con USB)
+───────────────────────────────────────────────────────────────
+
+Se hai Android Studio installato:
+
+    cd mobile-app
+    npx expo run:android
+
+Connetti il telefono via USB e l'app viene installata subito!
+
+───────────────────────────────────────────────────────────────
+
+
+🍎 PER iOS (Serve Mac)
+───────────────────────────────────────────────────────────────
+
+    cd mobile-app
+    eas build --platform ios
+
+Riceverai un file IPA da installare con TestFlight.
+
+───────────────────────────────────────────────────────────────
+
+
+💡 QUALE METODO SCEGLIERE?
+───────────────────────────────────────────────────────────────
+
+✅ Hai Android? → Usa EAS Build (Metodo 2 o Script)
+✅ Vuoi velocità? → Build locale con USB (Metodo 3)
+✅ Hai iPhone? → EAS Build iOS (serve Mac per testing)
+
+───────────────────────────────────────────────────────────────
+
+
+📦 DOPO LA BUILD
+───────────────────────────────────────────────────────────────
+
+✅ L'app funziona SEMPRE
+✅ Non serve PC acceso
+✅ Non serve Expo Go
+✅ App completamente standalone
+✅ Puoi distribuirla ad amici
+✅ Puoi pubblicarla su Play Store/App Store
+
+───────────────────────────────────────────────────────────────
+
+
+🔧 FILE DI CONFIGURAZIONE
+───────────────────────────────────────────────────────────────
+
+Dopo eas build:configure verrà creato eas.json:
+
+{
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {}
+  }
+}
+
+Questo è già configurato per creare APK!
+
+───────────────────────────────────────────────────────────────
+
+
+⏱️ TEMPI
+───────────────────────────────────────────────────────────────
+
+• EAS Build: 10-15 minuti (online)
+• Build locale: 5-10 minuti (sul tuo PC)
+• Download APK: 1-2 minuti
+• Installazione: 30 secondi
+
+───────────────────────────────────────────────────────────────
+
+
+💾 DIMENSIONE APK
+───────────────────────────────────────────────────────────────
+
+Circa 50-80 MB (dipende dalle ottimizzazioni)
+
+───────────────────────────────────────────────────────────────
+
+
+🆘 PROBLEMI COMUNI
+───────────────────────────────────────────────────────────────
+
+❌ "eas: command not found"
+   → npm install -g eas-cli
+
+❌ Build fallisce
+   → Verifica app.json (già configurato!)
+   → eas build:configure
+
+❌ APK non si installa
+   → Vai in Impostazioni → Sicurezza
+   → Permetti "Installa da fonti sconosciute"
+
+❌ Build troppo lenta
+   → È normale, ci vogliono 10-15 minuti!
+
+───────────────────────────────────────────────────────────────
+
+
+✅ COMANDO RAPIDO (Tutto in uno)
+───────────────────────────────────────────────────────────────
+
+    ./CREA-APK.sh
+
+Oppure manualmente:
+
+    cd mobile-app && eas build --platform android --profile preview
+
+───────────────────────────────────────────────────────────────
+
+
+📱 RISULTATO FINALE
+───────────────────────────────────────────────────────────────
+
+Avrai un file .apk che puoi:
+✅ Installare sul telefono
+✅ Usare SEMPRE (anche senza PC)
+✅ Condividere con amici
+✅ Caricare su Play Store
+✅ Aggiornare quando vuoi
+
+═══════════════════════════════════════════════════════════════
+
+🎉 PRONTO!
+
+Usa: ./CREA-APK.sh per iniziare!
+
+═══════════════════════════════════════════════════════════════
