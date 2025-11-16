@@ -1,0 +1,107 @@
+═══════════════════════════════════════════════════════════════
+  COME AVVIARE L'APP - MOTO3 PILOT TRAINER
+═══════════════════════════════════════════════════════════════
+
+📱 METODO PIÙ SEMPLICE - Script Automatico
+───────────────────────────────────────────────────────────────
+
+Copia e incolla questo comando nel terminale:
+
+    ./AVVIA-QUI.sh
+
+(Funziona da qualsiasi posizione!)
+
+───────────────────────────────────────────────────────────────
+
+
+📋 METODO MANUALE - Comandi da copiare
+───────────────────────────────────────────────────────────────
+
+PASSO 1: Vai nella cartella mobile-app
+
+    cd mobile-app
+
+PASSO 2: Avvia il server
+
+    npm start
+
+───────────────────────────────────────────────────────────────
+
+
+🔧 SE NON FUNZIONA - Usa il percorso completo
+───────────────────────────────────────────────────────────────
+
+Copia questo comando (funziona sempre da ovunque):
+
+    cd /home/user/preparatoreatleticomoto3app-2955/mobile-app && npm start
+
+───────────────────────────────────────────────────────────────
+
+
+📱 DOPO L'AVVIO
+───────────────────────────────────────────────────────────────
+
+1. Vedrai un QR CODE nel terminale
+2. Apri EXPO GO sul telefono
+3. Tocca "Scan QR Code"
+4. Scansiona il QR dal terminale
+5. Aspetta 10-30 secondi
+6. L'app si apre sul telefono! 🎉
+
+───────────────────────────────────────────────────────────────
+
+
+⚠️ PRIMA VOLTA?
+───────────────────────────────────────────────────────────────
+
+Installa Expo Go sul telefono:
+  - Android: Play Store → "Expo Go"
+  - iPhone: App Store → "Expo Go"
+
+───────────────────────────────────────────────────────────────
+
+
+🔄 PER FERMARE L'APP
+───────────────────────────────────────────────────────────────
+
+    Premi: Ctrl + C
+
+───────────────────────────────────────────────────────────────
+
+
+💡 SHORTCUTS DURANTE L'ESECUZIONE
+───────────────────────────────────────────────────────────────
+
+Dopo npm start, premi:
+  • w → Apri nel browser
+  • r → Reload app
+  • t → Tunnel mode (se QR non funziona)
+  • ? → Mostra aiuto
+
+───────────────────────────────────────────────────────────────
+
+
+🆘 PROBLEMI?
+───────────────────────────────────────────────────────────────
+
+QR code non funziona:
+  → Premi "t" nel terminale per tunnel mode
+
+App non si aggiorna:
+  → Scuoti il telefono, tocca "Reload"
+
+Metro lento:
+  → npm start -- --clear
+
+Errori strani:
+  → rm -rf node_modules
+  → npm install --legacy-peer-deps
+  → npm start
+
+───────────────────────────────────────────────────────────────
+
+✅ COMANDO PRONTO DA COPIARE (usa questo!):
+
+cd /home/user/preparatoreatleticomoto3app-2955/mobile-app && npm start
+
+───────────────────────────────────────────────────────────────
