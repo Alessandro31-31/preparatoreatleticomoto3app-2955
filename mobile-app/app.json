@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "Moto3 Pilot Trainer",
+    "slug": "moto3-pilot-trainer",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/natively-dark.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/natively-dark.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.moto3.pilottrainer",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "L'app ha bisogno di accedere alla fotocamera per l'analisi video",
+        "NSPhotoLibraryUsageDescription": "L'app ha bisogno di accedere alla galleria per selezionare video",
+        "NSMicrophoneUsageDescription": "L'app ha bisogno del microfono per registrare video"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/natively-dark.png",
+        "backgroundColor": "#000000"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.moto3.pilottrainer",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/final_quest_240x240.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-router",
+      "expo-web-browser"
+    ],
+    "scheme": "moto3trainer",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {}
+    }
+  }
+}

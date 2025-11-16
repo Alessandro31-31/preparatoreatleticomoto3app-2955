@@ -1,0 +1,283 @@
+{
+  "athlete": {
+    "name": "Ale",
+    "age": 18,
+    "category": "Moto3",
+    "condition": "Iperlordosi lombare 4° SEVERA",
+    "startDate": "2025-11-06",
+    "endDate": "2026-04-13"
+  },
+  "mesocycles": [
+    {
+      "id": 1,
+      "name": "MESOCICLO 1A: ANATOMICAL ADAPTATION",
+      "weeks": [
+        1,
+        2,
+        3
+      ],
+      "focus": "Tecnica perfetta + correzione iperlordosi",
+      "intensity": "60-70% 1RM",
+      "volume": "Moderato-alto (8-12 reps)",
+      "objective": "Baseline strength + movimento pattern"
+    },
+    {
+      "id": 2,
+      "name": "DELOAD 1",
+      "weeks": [
+        4
+      ],
+      "focus": "Recovery + consolidamento tecnica",
+      "intensity": "70% del normale",
+      "volume": "-50%"
+    },
+    {
+      "id": 3,
+      "name": "MESOCICLO 2A: HYPERTROPHY",
+      "weeks": [
+        5,
+        6,
+        7
+      ],
+      "focus": "Capacity building",
+      "intensity": "70-75% 1RM",
+      "volume": "Alto (8-12 reps)",
+      "novelty": "Farmer's walks, Propriocezione"
+    },
+    {
+      "id": 4,
+      "name": "DELOAD 2",
+      "weeks": [
+        8
+      ],
+      "focus": "Recovery pre-strength",
+      "volume": "-50%"
+    },
+    {
+      "id": 5,
+      "name": "MESOCICLO 2B: STRENGTH BASE",
+      "weeks": [
+        9
+      ],
+      "focus": "Transizione verso forza",
+      "intensity": "75-80% 1RM",
+      "volume": "Moderato (6-8 reps)"
+    },
+    {
+      "id": 6,
+      "name": "MESOCICLO 3: TRANSFER + POTENZA",
+      "weeks": [
+        10,
+        11
+      ],
+      "focus": "PAP complex, transfer potenza",
+      "intensity": "85-92% 1RM",
+      "volume": "Basso (3-5 reps)",
+      "specificity": "Plank con casco, RSA intervals"
+    },
+    {
+      "id": 7,
+      "name": "DELOAD 3",
+      "weeks": [
+        12
+      ],
+      "focus": "Recovery pre-peak",
+      "volume": "-50%"
+    },
+    {
+      "id": 8,
+      "name": "MESOCICLO 3B: PEAK TRANSFER",
+      "weeks": [
+        13,
+        14,
+        15
+      ],
+      "focus": "RACE SIMULATION",
+      "intensity": "85-90% 1RM",
+      "volume": "Basso-moderato",
+      "specificity": "Metabolic circuits, pressure training, RSA peak",
+      "coreVolume": "260 min PEAK"
+    },
+    {
+      "id": 9,
+      "name": "DELOAD 4 + TAPER START",
+      "weeks": [
+        16
+      ],
+      "focus": "Freshness inizia",
+      "volume": "-40%",
+      "intensity": "Mantenuta"
+    },
+    {
+      "id": 10,
+      "name": "MESOCICLO 5: TAPER + PEAK",
+      "weeks": [
+        17,
+        18
+      ],
+      "focus": "Peak readiness, energy 10/10",
+      "volume": "-60%",
+      "intensity": "Mantenuta (peak carichi)"
+    }
+  ],
+  "morningRoutine": {
+    "duration": 12,
+    "exercises": [
+      {
+        "name": "Cat-Cow",
+        "sets": "2",
+        "reps": "15",
+        "tempo": "3sec per fase"
+      },
+      {
+        "name": "Glute Bridge",
+        "sets": "3",
+        "reps": "12",
+        "hold": "2sec top"
+      },
+      {
+        "name": "Dead Bug",
+        "sets": "3",
+        "reps": "8/lato"
+      },
+      {
+        "name": "Bird Dog",
+        "sets": "3",
+        "reps": "8/lato"
+      },
+      {
+        "name": "Psoas March",
+        "sets": "2",
+        "reps": "20"
+      }
+    ],
+    "tracking": {
+      "stiffnessPre": "number",
+      "stiffnessPost": "number",
+      "delta": "calculated",
+      "targetDelta": "≥2"
+    }
+  },
+  "tools": {
+    "readinessCheck": {
+      "name": "Controllo Giornaliero Prontezza",
+      "metrics": [
+        "Sleep quality",
+        "Muscle soreness",
+        "Stress level",
+        "Energy level",
+        "Motivation"
+      ]
+    },
+    "multiIntervalTimer": {
+      "name": "Timer Multi-Intervallo",
+      "presets": [
+        {
+          "name": "Tabata",
+          "work": 20,
+          "rest": 10,
+          "rounds": 8
+        },
+        {
+          "name": "HIIT Standard",
+          "work": 30,
+          "rest": 30,
+          "rounds": 10
+        },
+        {
+          "name": "Core Circuit",
+          "work": 45,
+          "rest": 15,
+          "rounds": 6
+        }
+      ]
+    },
+    "acrCalculator": {
+      "name": "Calcolatore ACR",
+      "formula": "Acute Load (7 days) / Chronic Load (28 days)",
+      "sweetSpot": "0.8-1.3",
+      "dangerZone": ">1.5"
+    },
+    "loadTracker": {
+      "name": "Tracker del Carico",
+      "formula": "RPE × Duration (minutes)",
+      "tracking": [
+        "Daily load",
+        "Weekly load",
+        "Chronic load"
+      ]
+    },
+    "hrvMonitor": {
+      "name": "Monitor HRV",
+      "target": ">55ms",
+      "tracking": "Daily morning measurement",
+      "redFlag": "<45ms"
+    },
+    "postureAssessment": {
+      "name": "Valutazione Postura",
+      "focus": "Iperlordosi lombare",
+      "measurements": [
+        "FlexiTrace score",
+        "Wall test",
+        "Pelvic tilt"
+      ]
+    }
+  },
+  "redFlagSystem": {
+    "categories": [
+      {
+        "name": "Dolore",
+        "triggers": [
+          "Dolore lombare >2/10",
+          "Dolore acuto articolare"
+        ],
+        "action": "STOP allenamento, valutazione medica"
+      },
+      {
+        "name": "Forma tecnica",
+        "triggers": [
+          "Form breakdown >30% esercizi",
+          "Impossibilità mantenere retroversione"
+        ],
+        "action": "Ridurre carico 20%, focus tecnica"
+      },
+      {
+        "name": "Recupero",
+        "triggers": [
+          "Rigidità POST > PRE",
+          "HRV <45ms",
+          "ACR >1.5"
+        ],
+        "action": "Deload 50%, riposo extra"
+      },
+      {
+        "name": "Fatica sistemica",
+        "triggers": [
+          "Fatica eccessiva >8/10",
+          "Sleep <6h per 3+ giorni"
+        ],
+        "action": "Ridurre volume 30-50%"
+      }
+    ]
+  },
+  "expectedProgressions": {
+    "week1": {
+      "gobletSquat": "16kg × 10",
+      "trapBar": "40kg × 8",
+      "plankWeighted": "10kg × 40sec",
+      "deadHang": "40-50sec"
+    },
+    "week9": {
+      "frontSquat": "32kg × 5",
+      "trapBar": "58kg × 4",
+      "plankWeighted": "10kg × 50sec",
+      "pullUp": "+2.5kg × 5"
+    },
+    "week18": {
+      "frontSquat": "40kg × 3",
+      "trapBar": "65kg × 2",
+      "plankCasco": "45sec × 4",
+      "wallSit": "180sec × 3"
+    }
+  }
+}

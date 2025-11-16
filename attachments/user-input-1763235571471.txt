@@ -1,0 +1,182 @@
+# User Request
+    Crea un'app completa per allenamento pilota Moto3 con le seguenti funzionalità:
+
+## PAGINE PRINCIPALI:
+
+### 1. DASHBOARD/HOME
+- Hero section con immagine pilota Moto3
+- Overview stato attuale: Settimana corrente, HRV giornaliero, Carico settimanale, Rigidità mattutina
+- Quick access: Routine Mattutina, Allenamento Oggi, Timer, Strumenti
+- Card riassuntive con grafici mini per progressi settimanali
+- Sistema di notifiche per bandiere rosse
+
+### 2. ROUTINE MATTUTINA (12 minuti)
+- Lista esercizi con timer integrato: Cat-Cow (2×15), Glute Bridge (3×12), Dead Bug (3×8/lato), Bird Dog (3×8/lato), Psoas March (2×20)
+- Input rigidità PRE (slider 0-10)
+- Timer countdown per ogni esercizio
+- Input rigidità POST (slider 0-10)
+- Calcolo automatico delta (target ≥2 punti)
+- Salva completamento nel database con timestamp
+
+### 3. CALENDARIO 18 SETTIMANE
+- Vista calendario con 18 settimane (6 Nov 2025 → 13 Apr 2026)
+- Codice colore per mesocicli:
+* Settimane 1-3: Anatomical Adaptation (blu chiaro)
+* Settimana 4: Deload 1 (verde)
+* Settimane 5-7: Hypertrophy (viola)
+* Settimana 8: Deload 2 (verde)
+* Settimana 9: Strength Base (rosso scuro)
+* Settimane 10-11: Transfer + Potenza (arancione)
+* Settimana 12: Deload 3 (verde)
+* Settimane 13-15: Peak Transfer (rosso acceso)
+* Settimana 16: Deload 4 + Taper (verde chiaro)
+* Settimane 17-18: Taper + Peak (giallo oro)
+- Click su settimana → mostra 7 giorni con tipo allenamento
+- Click su giorno → pagina dettaglio sessione completa
+
+### 4. DETTAGLIO ALLENAMENTO
+- Nome sessione (es: "Lower Body + Core Forza")
+- Warm-up completo con istruzioni
+- Blocchi esercizi con:
+* Nome esercizio e carico
+* Serie × Reps × Recupero
+* Setup, Tecnica, Respirazione
+* Focus muscolare
+* RPE target
+* Input tracking: serie completate, carico usato, RPE effettivo, note
+- Core work specialistico
+- Stretching post-workout
+- Post-workout tracking: durata, RPE medio, calcolo Load automatico, biometrics
+
+### 5. PREPARAZIONE E RECUPERO
+- Tabs per:
+* Riscaldamento Pre-Allenamento (10-15 min protocolli)
+* Raffreddamento Post-Allenamento (5-10 min)
+* Stretching Dedicato (giorno riposo - 30 min)
+* Protocollo Foam Rolling (15 min)
+* Riferimento Rapido (checklist pre-gara)
+
+### 6. STRUMENTI DI MONITORAGGIO
+
+#### 6.1 Controllo Prontezza Giornaliero
+- Questionario mattutino: Sleep quality (1-5), Muscle soreness (1-5), Stress level (1-5), Energy (1-5), Motivation (1-5)
+- Calcolo score totale (max 25)
+- Storico ultimi 7 giorni con grafico
+- Raccomandazioni automatiche se score <15
+
+#### 6.2 Timer Multi-Intervallo
+- Preset: Tabata (20"/10" × 8), HIIT Standard (30"/30" × 10), Core Circuit (45"/15" × 6)
+- Custom timer: work/rest/rounds configurabili
+- Display grande con countdown
+- Audio/vibrazione alert
+- Pause/Resume/Reset
+
+#### 6.3 Calcolatore ACR (Acute:Chronic Ratio)
+- Input carico giornaliero (RPE × durata)
+- Calcolo automatico:
+* Acute Load: media ultimi 7 giorni
+* Chronic Load: media ultimi 28 giorni
+* ACR ratio
+- Indicatore visivo:
+* Verde: 0.8-1.3 (sweet spot)
+* Giallo: 0.5-0.8 o 1.3-1.5 (attenzione)
+* Rosso: <0.5 o >1.5 (danger zone)
+- Grafico trend ACR ultimi 30 giorni
+
+#### 6.4 Tracker del Carico
+- Input sessioni: data, durata, RPE
+- Calcolo automatico Load = RPE × durata
+- Vista settimanale con carico totale
+- Grafico carico giornaliero e settimanale
+- Export CSV dati
+
+#### 6.5 Monitor HRV
+- Input HRV mattutino (ms)
+- Target: >55ms
+- Red flag: <45ms
+- Grafico trend 30 giorni
+- Correlazione con carico allenamento
+
+#### 6.6 Valutazione Postura
+- Focus iperlordosi lombare
+- Input misurazioni:
+* FlexiTrace score
+* Wall test (distanza lombare-muro)
+* Pelvic tilt (gradi)
+- Foto reference postura (upload)
+- Tracking progressi mensili
+- Alert se peggioramento >10%
+
+### 7. SISTEMA BANDIERA ROSSA
+- Dashboard alert visibili in home
+- Categorie monitorate automaticamente:
+* Dolore: lombare >2/10, dolore acuto articolare
+* Forma tecnica: breakdown >30% esercizi
+* Recupero: rigidità POST > PRE, HRV <45ms, ACR >1.5
+* Fatica sistemica: >8/10, sleep <6h per 3+ giorni
+- Per ogni flag: descrizione problema, azione raccomandata
+- Storico bandiere rosse con risoluzione
+
+### 8. PROGRESSIONI ATTESE
+- Vista milestones per settimana target:
+* Settimana 1: Goblet Squat 16kg×10, Trap-Bar 40kg×8, Plank 10kg×40", Dead-hang 40-50"
+* Settimana 9: Front Squat 32kg×5, Trap-Bar 58kg×4, Plank 10kg×50", Pull-Up +2.5kg×5
+* Settimana 18: Front Squat 40kg×3, Trap-Bar 65kg×2, Plank con casco 45"×4, Wall sit 180"×3
+- Confronto target vs attuale per ogni esercizio
+- Indicatore % raggiungimento obiettivo
+- Novità per settimana (es: Sett 10 "Introduce Plank con casco")
+
+### 9. PROGRESSI E ANALISI
+
+#### 9.1 Grafici Progressione
+- Peso corporeo (target 59±0.5 kg)
+- Rigidità mattutina (trend 18 settimane, target <2/10)
+- Carico settimanale (volume totale)
+- Progressione esercizi principali:
+* Goblet/Front Squat: carico × reps
+* Trap-Bar Deadlift: carico × reps
+* Plank weighted/casco: tempo
+* Pull-up/Dead-hang: carico/tempo
+- HRV trend (target >55ms)
+- Confronto Target vs Attuale per milestone
+
+#### 9.2 Export Allenamento PDF
+- Genera PDF report per:
+* Singola sessione
+* Settimana completa
+* Mesociclo completo
+* Report 18 settimane totale
+- Include: esercizi svolti, carichi, RPE, grafici progressi, note
+
+### DESIGN:
+- Tema scuro motorsport racing con accenti rosso/blu neon
+- Tipografia moderna e leggibile
+- Icone per ogni sezione
+- Mobile-first responsive
+- Animazioni fluide per transizioni
+- Cards con hover effects
+
+### DATABASE:
+- Tabella users: id, name, age, category, startDate
+- Tabella sessions: id, userId, date, weekNumber, dayName, sessionType, duration, rpeAvg, load, completed
+- Tabella exercises: id, sessionId, name, sets, reps, weight, rpeActual, notes
+- Tabella morningRoutine: id, userId, date, stiffnessPre, stiffnessPost, delta, completed
+- Tabella biometrics: id, userId, date, weight, hrv, sleepQuality, energyLevel
+- Tabella redFlags: id, userId, date, category, description, action, resolved
+- Tabella progressions: id, userId, exerciseName, week, target, actual, percentAchieved
+
+### AUTENTICAZIONE:
+- Login/Signup con email
+- Profilo utente con foto
+- Settings: notifiche, unità misura, lingua (IT/EN)
+
+Rendilo professionale al livello di un pilota Moto3 professionista. Tutto deve essere modificabile dall'utente.
+
+    Ensure:
+- home.tsx, website.config.json, and index.html are updated to align with the theme, and context.
+
+    ## Assets (inside workspace, to be included in the website)
+    - /home/user/websites/moto3-training-app/public/moto3-hero.png
+- /home/user/websites/moto3-training-app/public/dashboard-preview.png
+- /home/user/websites/moto3-training-app/public/plank-demo.png
+- /home/user/websites/moto3-training-app/public/squat-demo.png

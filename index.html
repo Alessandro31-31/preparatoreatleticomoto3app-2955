@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <!-- Primary metadata - will be updated by SEO utilities in SPA -->
+    <title>Moto3 Training Pro - Professional Training Management for Moto3 Pilots</title>
+    <meta name="description" content="Complete training, recovery, and performance tracking system designed specifically for professional Moto3 pilots. Track workouts, monitor recovery, and optimize performance over an 18-week training cycle." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Moto3 Training Pro - Professional Training Management" />
+    <meta property="og:description" content="Complete training, recovery, and performance tracking system designed specifically for professional Moto3 pilots. Track workouts, monitor recovery, and optimize performance." />
+    <meta property="og:image" content="/moto3-hero.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Moto3 Training Pro - Professional Training Management" />
+    <meta property="twitter:description" content="Complete training, recovery, and performance tracking system designed specifically for professional Moto3 pilots. Track workouts, monitor recovery, and optimize performance." />
+    <meta property="twitter:image" content="/moto3-hero.png" />
+    
+    <meta name="theme-color" content="oklch(0.21 0.006 285.885)" />
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored === 'dark' || stored === 'light' ? stored : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
