@@ -1,28 +1,44 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Mobile Optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Moto3 Trainer" />
     <meta name="color-scheme" content="light dark" />
-    
+    <meta name="theme-color" content="#E10600" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+
     <!-- Primary metadata - will be updated by SEO utilities in SPA -->
-    <title>Moto3 Training Pro - Professional Training Management for Moto3 Pilots</title>
-    <meta name="description" content="Complete training, recovery, and performance tracking system designed specifically for professional Moto3 pilots. Track workouts, monitor recovery, and optimize performance over an 18-week training cycle." />
-    
+    <title>🏍️ Moto3 Pilot Trainer - Allenamento Professionale Completo</title>
+    <meta name="description" content="Sistema completo di allenamento di 18 settimane per piloti Moto3. Include calendario allenamenti, monitoraggio HRV, coach virtuale AI, simulatore giri, mental training, nutrizione e molto altro. Progettato per massimizzare le performance in pista." />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Moto3 Training Pro - Professional Training Management" />
-    <meta property="og:description" content="Complete training, recovery, and performance tracking system designed specifically for professional Moto3 pilots. Track workouts, monitor recovery, and optimize performance." />
+    <meta property="og:title" content="🏍️ Moto3 Pilot Trainer - Sistema di Allenamento Professionale" />
+    <meta property="og:description" content="18 settimane di allenamento completo per piloti Moto3. Calendario, HRV monitor, AI coach, lap simulator, mental training, nutrition tracking. Tutto quello che serve per eccellere in pista!" />
     <meta property="og:image" content="/moto3-hero.png" />
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Moto3 Training Pro - Professional Training Management" />
-    <meta property="twitter:description" content="Complete training, recovery, and performance tracking system designed specifically for professional Moto3 pilots. Track workouts, monitor recovery, and optimize performance." />
+    <meta property="twitter:title" content="🏍️ Moto3 Pilot Trainer" />
+    <meta property="twitter:description" content="Sistema completo di allenamento per piloti Moto3. 18 settimane, AI coaching, monitoraggio performance." />
     <meta property="twitter:image" content="/moto3-hero.png" />
-    
-    <meta name="theme-color" content="oklch(0.21 0.006 285.885)" />
+
+    <!-- Keywords -->
+    <meta name="keywords" content="moto3, pilot training, motorcycle racing, athlete training, HRV monitor, lap simulator, mental training, sports performance, racing fitness, moto gp" />
     <script>
       (function() {
         try {
