@@ -21,8 +21,28 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
+        manualChunks: (id) => {
+          // Core vendor libraries
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+              return 'vendor-react';
+            }
+            if (id.includes('@radix-ui')) {
+              return 'vendor-ui';
+            }
+            if (id.includes('lucide-react')) {
+              return 'vendor-icons';
+            }
+            return 'vendor-other';
+          }
+          // Separate moto3 pages
+          if (id.includes('src/pages/moto3/')) {
+            return 'moto3-pages';
+          }
+          // UI components
+          if (id.includes('src/components/ui/')) {
+            return 'ui-components';
+          }
         },
       },
     },

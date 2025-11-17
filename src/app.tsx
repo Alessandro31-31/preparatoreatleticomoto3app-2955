@@ -11,37 +11,49 @@ import TrainingCalendar from "@/pages/calendar";
 import MonitoringTools from "@/pages/tools";
 import MorningRoutine from "@/pages/routine";
 
-// Moto3 App Pages
-import Moto3Home from "@/pages/moto3/home";
-import Moto3Calendar from "@/pages/moto3/calendar-full";
-import Moto3Readiness from "@/pages/moto3/readiness";
-import Moto3Progress from "@/pages/moto3/progress";
-import VirtualCoach from "@/pages/moto3/virtual-coach";
-import LapSimulator from "@/pages/moto3/lap-simulator";
-import MentalTraining from "@/pages/moto3/mental-training";
-import NutritionDiary from "@/pages/moto3/nutrition";
-import VideoAnalysis from "@/pages/moto3/video-analysis";
-import BikeSetup from "@/pages/moto3/bike-setup";
-import Achievements from "@/pages/moto3/achievements";
-import Warmup from "@/pages/moto3/warmup";
-import Cooldown from "@/pages/moto3/cooldown";
-import Timer from "@/pages/moto3/timer";
-import ACRCalculator from "@/pages/moto3/acr-calculator";
-import LoadTracker from "@/pages/moto3/load-tracker";
-import QuickReference from "@/pages/moto3/quick-reference";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
+// Moto3 App Pages - Lazy loaded for better performance
+const Moto3Home = lazy(() => import("@/pages/moto3/home"));
+const Moto3Calendar = lazy(() => import("@/pages/moto3/calendar-full"));
+const Moto3Readiness = lazy(() => import("@/pages/moto3/readiness"));
+const Moto3Progress = lazy(() => import("@/pages/moto3/progress"));
+const VirtualCoach = lazy(() => import("@/pages/moto3/virtual-coach"));
+const LapSimulator = lazy(() => import("@/pages/moto3/lap-simulator"));
+const MentalTraining = lazy(() => import("@/pages/moto3/mental-training"));
+const NutritionDiary = lazy(() => import("@/pages/moto3/nutrition"));
+const VideoAnalysis = lazy(() => import("@/pages/moto3/video-analysis"));
+const BikeSetup = lazy(() => import("@/pages/moto3/bike-setup"));
+const Achievements = lazy(() => import("@/pages/moto3/achievements"));
+const Warmup = lazy(() => import("@/pages/moto3/warmup"));
+const Cooldown = lazy(() => import("@/pages/moto3/cooldown"));
+const Timer = lazy(() => import("@/pages/moto3/timer"));
+const ACRCalculator = lazy(() => import("@/pages/moto3/acr-calculator"));
+const LoadTracker = lazy(() => import("@/pages/moto3/load-tracker"));
+const QuickReference = lazy(() => import("@/pages/moto3/quick-reference"));
+
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-500 mx-auto mb-4"></div>
+      <p className="text-muted-foreground">Loading...</p>
+    </div>
+  </div>
+);
 
 export function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* Moto3 App - Main Routes */}
-        <Route path="/" element={<Moto3Home />} />
-        <Route path="/moto3" element={<Moto3Home />} />
-        <Route path="/moto3/calendar" element={<Moto3Calendar />} />
-        <Route path="/moto3/readiness" element={<Moto3Readiness />} />
-        <Route path="/moto3/progress" element={<Moto3Progress />} />
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          {/* Moto3 App - Main Routes */}
+          <Route path="/" element={<Moto3Home />} />
+          <Route path="/moto3" element={<Moto3Home />} />
+          <Route path="/moto3/calendar" element={<Moto3Calendar />} />
+          <Route path="/moto3/readiness" element={<Moto3Readiness />} />
+          <Route path="/moto3/progress" element={<Moto3Progress />} />
 
         {/* Moto3 Tools */}
         <Route path="/moto3/virtual-coach" element={<VirtualCoach />} />
@@ -108,7 +120,8 @@ export function App() {
             </RequireAdmin>
           }
         />
-      </Routes>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
