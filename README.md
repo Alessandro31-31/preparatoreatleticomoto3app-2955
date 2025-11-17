@@ -1,151 +1,257 @@
-# Minimal Starter
+# Moto3 Training Pro 🏍️
 
-A clean, minimal starter template providing the perfect foundation for your next project. Built with modern tools and ready for your creativity.
+Professional Training Management System for Moto3 Pilots - A complete web application for tracking workouts, monitoring recovery, and optimizing performance over an 18-week training cycle.
 
 ## ✨ Features
 
-- 🚀 **Modern Stack**: React 19, TypeScript, Vite, Tailwind CSS
-- 🎨 **Beautiful UI**: shadcn/ui components with customizable design tokens
-- 📱 **Responsive**: Mobile-first design with dark/light theme support
-- ⚡ **Performance**: Cloudflare Workers backend with sub-second response times
-- 🗄️ **Database**: Drizzle ORM with D1 database
-- 🧪 **Type Safety**: Comprehensive TypeScript setup
-- 🔧 **Developer Experience**: Hot reload, ESLint, and modern tooling
+### 🏋️ Training Management
+- **18-Week Periodized Program**: Structured training schedule with detailed workout tracking
+- **Session Logging**: Track training sessions with RPE, duration, and load calculations
+- **Exercise Library**: Comprehensive database of exercises with progression tracking
+- **Custom Routines**: Create and follow personalized workout routines
 
-## 🏗️ Architecture
+### 💪 Recovery Monitoring
+- **HRV Tracking**: Heart Rate Variability monitoring for recovery assessment
+- **Sleep Quality**: Daily sleep tracking with quality metrics
+- **Morning Routine**: 12-minute mobility protocol with progress tracking
+- **Red Flag System**: Automatic alerts for recovery issues
 
-```
-├── src/                    # Frontend React application
-│   ├── components/         # Reusable UI components
-│   │   └── ui/            # shadcn/ui base components
-│   ├── pages/             # Page components
-│   ├── lib/               # Utilities and helpers
-│   └── styles/            # Global styles and themes
-├── worker/                # Cloudflare Workers backend
-│   ├── routes/            # API routes
-│   └── db/                # Database schema and migrations
-├── public/                # Static assets (Vite standard)
-│   ├── favicon.svg        # Site favicon
-│   └── *.{png,jpg,svg}    # Images, logos, etc.
-└── instructions/          # Documentation for adding features
-```
+### 📊 Performance Analytics
+- **Progress Charts**: Visual representation of performance over time
+- **Milestone Tracking**: Track personal bests and achievements
+- **Weekly Load Management**: Monitor training load and prevent overtraining
+- **Biometric Dashboard**: Comprehensive view of all health metrics
 
-## 🚀 Quick Start
+### 🛠️ Training Tools
+- **Interval Timer**: Customizable work/rest interval timer
+- **ACR Calculator**: Acute:Chronic Ratio calculator for injury prevention
+- **Exercise Database**: Searchable database with exercise demonstrations
+- **Calendar View**: Visual overview of your 18-week training plan
+
+### 📱 Mobile-First Design
+- **Progressive Web App**: Install on your phone like a native app
+- **Offline Support**: Access your data even without internet connection
+- **Touch-Optimized**: Large tap targets and smooth interactions
+- **Responsive Design**: Works perfectly on all screen sizes
+- **Safe Area Support**: Optimized for notched devices (iPhone X and newer)
+
+## 🚀 Getting Started
 
 ### Prerequisites
-
-- [Bun](https://bun.sh/) (recommended) or Node.js
-- [Cloudflare account](https://cloudflare.com/) for deployment
+- [Bun](https://bun.sh) (v1.2.0 or higher)
+- Modern web browser with PWA support
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd minimal-starter-template
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd preparatoreatleticomoto3app-2955
+   ```
+
+2. **Install dependencies**
+   ```bash
+   bun install
+   ```
+
+3. **Set up environment variables**
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_BETTER_AUTH_URL=your_auth_url
+   ```
+
+4. **Run the development server**
+   ```bash
+   bun dev
+   ```
+
+5. **Open in your browser**
+   Navigate to `http://localhost:5173`
+
+## 📱 Installing on Mobile
+
+### iOS (iPhone/iPad)
+1. Open the app in Safari
+2. Tap the Share button (square with arrow)
+3. Scroll down and tap "Add to Home Screen"
+4. Tap "Add" in the top right
+
+### Android
+1. Open the app in Chrome
+2. Tap the menu (three dots)
+3. Tap "Install app" or "Add to Home Screen"
+4. Follow the prompts to install
+
+Once installed, the app will:
+- ✅ Work offline
+- ✅ Send push notifications (if enabled)
+- ✅ Open in fullscreen mode
+- ✅ Save data locally
+- ✅ Sync when online
+
+## 🔧 Customization
+
+### Modifying the Theme
+Edit `/src/styles/global.css` to customize colors:
+
+```css
+:root {
+  --primary: oklch(0.6 0.12 190);    /* Change primary color */
+  --background: oklch(0.985 0.008 95); /* Change background */
+  /* ... more colors ... */
+}
 ```
-
-2. Install dependencies:
-```bash
-bun install
-```
-
-3. Set up environment variables:
-```bash
-cp .env.example .env.local
-```
-
-4. Start the development server:
-```bash
-bun run dev
-```
-
-5. Visit `http://localhost:5173` to see your application.
-
-## 📦 Available Scripts
-
-- `bun run dev` - Start development server
-- `bun run build` - Build for production
-- `bun run preview` - Preview production build
-- `bun run pre-deploy` - Generate database migrations
-- `bun run db:generate` - Generate database types
-
-## 🎨 Customization
-
-### Theming
-
-The template uses semantic design tokens defined in `src/styles/global.css`. Customize colors, spacing, and typography by modifying the CSS custom properties.
 
 ### Adding New Pages
+1. Create a new file in `/src/pages/your-page.tsx`
+2. Add the route in `/src/app.tsx`:
+   ```tsx
+   <Route path="/your-page" element={<YourPage />} />
+   ```
 
-1. Create a new component in `src/pages/`
-2. Add the route in `src/app.tsx`
-3. Update navigation as needed
+### Modifying the Training Program
+Edit `/public/training-data.json` to customize:
+- Exercise list
+- Weekly schedules
+- Rep schemes
+- Rest periods
 
-### Components
+### Customizing the PWA
+Edit `/public/manifest.json` to change:
+- App name and description
+- Theme colors
+- Icons
+- Shortcuts
 
-- Reusable components go in `src/components/`
-- Use shadcn/ui as a base for new components
-- Follow the existing patterns for props and styling
+## 🏗️ Building for Production
 
-## 🌐 Deployment
-
-### Cloudflare Workers
-
-1. Install Wrangler CLI:
 ```bash
-bunx wrangler login
+# Build the application
+bun run build
+
+# Preview the production build
+bun run preview
+
+# Deploy (if using Cloudflare Pages/Workers)
+bun run autumn:push:prod
 ```
 
-2. Configure your environment variables in Wrangler
-3. Deploy:
+## 📁 Project Structure
+
+```
+preparatoreatleticomoto3app-2955/
+├── src/
+│   ├── components/      # Reusable UI components
+│   │   ├── ui/         # shadcn/ui components
+│   │   └── ...         # Custom components
+│   ├── pages/          # Page components
+│   │   ├── home.tsx    # Landing/dashboard page
+│   │   ├── calendar.tsx # Training calendar
+│   │   ├── routine.tsx  # Morning routine
+│   │   ├── tools.tsx    # Training tools
+│   │   └── ...
+│   ├── lib/            # Utilities and helpers
+│   ├── hooks/          # Custom React hooks
+│   ├── styles/         # Global styles
+│   └── types/          # TypeScript types
+├── worker/             # Cloudflare Workers API
+│   ├── routes/         # API routes
+│   └── db/             # Database schema
+├── public/             # Static assets
+│   ├── manifest.json   # PWA manifest
+│   ├── sw.js          # Service worker
+│   └── ...
+└── ...
+```
+
+## 🔐 Authentication
+
+The app uses [Better Auth](https://www.better-auth.com/) for authentication with support for:
+- Email/Password login
+- OAuth providers
+- Session management
+- Role-based access control
+
+## 💾 Database
+
+Using Drizzle ORM with Cloudflare D1:
+
 ```bash
-bun run pre-deploy
-bunx wrangler deploy
+# Generate migrations
+bun run db:generate
+
+# View database in dashboard
+bun run autumn:dashboard
 ```
 
-### Environment Variables
+## 🎨 UI Components
 
-Key environment variables to configure:
+Built with:
+- **React 19**: Latest React features
+- **Tailwind CSS 4**: Utility-first CSS framework
+- **shadcn/ui**: High-quality, customizable components
+- **Lucide Icons**: Beautiful, consistent icons
+- **Framer Motion**: Smooth animations
 
-```env
-# Database
-D1_DATABASE_NAME=your-database-name
+## 📊 State Management
 
-# Authentication (if enabled)
-BETTER_AUTH_SECRET=your-auth-secret
-VITE_BETTER_AUTH_URL=https://your-domain.com
+- **TanStack Query**: Server state management and caching
+- **React Context**: Global client state
+- **Better Auth**: Authentication state
 
-# Additional services as needed
+## 🧪 Development
+
+```bash
+# Run linter
+bun run lint
+
+# Type checking (if configured)
+tsc --noEmit
+
+# Run development server
+bun dev
 ```
 
-## 📚 Documentation
+## 🚢 Deployment
 
-- [Database Guide](./instructions/database.md)
-- [Theming](./instructions/theming.md)
-- [Static Assets](./instructions/assets.md)
-- [Authentication](./instructions/authentication.md)
-- [Billing](./instructions/billing.md)
+### Cloudflare Pages (Recommended)
+```bash
+bun run autumn:push:prod
+```
 
-## 🛠️ Development
+### Other Platforms
+The app is a standard Vite application and can be deployed to:
+- Vercel
+- Netlify
+- AWS Amplify
+- Any static hosting service
 
-### Code Style
+## 📝 License
 
-- TypeScript for type safety
-- ESLint for code quality
-- Semantic HTML and accessibility
+This project is open source and available under the MIT License.
 
-### Contributing
+## 🙏 Acknowledgments
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+- Training program designed for professional Moto3 pilots
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Built with [Vite](https://vitejs.dev/) and [React](https://react.dev/)
 
-## 📄 License
+## 🐛 Issues & Support
 
-MIT License - see LICENSE file for details.
+If you encounter any issues or need help:
+1. Check the [Issues](../../issues) page
+2. Create a new issue with detailed information
+3. Include screenshots if relevant
+
+## 🔄 Updates
+
+To get the latest updates:
+```bash
+git pull origin main
+bun install
+bun run build
+```
 
 ---
 
-**Minimal Starter** - Your creative canvas awaits. 🎨
+**Made with ❤️ for Moto3 Training**

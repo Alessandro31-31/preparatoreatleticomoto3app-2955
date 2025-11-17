@@ -155,3 +155,110 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Mobile-optimized styles */
+@layer utilities {
+  /* Touch-friendly tap targets */
+  .tap-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Smooth scrolling for mobile */
+  .smooth-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Prevent text selection on interactive elements */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  /* Safe area support for notched devices */
+  .safe-area-inset-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-area-inset-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-area-inset-right {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+  /* Larger touch targets on mobile */
+  button, a, input[type="button"], input[type="submit"] {
+    min-height: 44px;
+  }
+
+  /* Better spacing for mobile */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Full-width cards on mobile */
+  .card {
+    border-radius: var(--radius-md);
+  }
+
+  /* Optimize font sizes for mobile */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  *:hover {
+    transition: none;
+  }
+
+  /* Better tap feedback */
+  button:active, a:active {
+    transform: scale(0.98);
+    transition: transform 0.1s;
+  }
+}
+
+/* Orientation support */
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Optimize for landscape mobile view */
+  .min-h-screen {
+    min-height: 100vh;
+  }
+}
+
+/* PWA splash screen support */
+@media (display-mode: standalone) {
+  /* Remove address bar space when installed as PWA */
+  body {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* Hide any "install app" prompts when already installed */
+  .install-prompt {
+    display: none;
+  }
+}

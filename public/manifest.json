@@ -1,0 +1,64 @@
+{
+  "name": "Moto3 Training Pro",
+  "short_name": "Moto3 Pro",
+  "description": "Professional Training Management for Moto3 Pilots - Track workouts, monitor recovery, and optimize performance",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#ef4444",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/moto3-hero.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["health", "fitness", "sports"],
+  "screenshots": [
+    {
+      "src": "/dashboard-preview.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Dashboard Overview"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Morning Routine",
+      "short_name": "Routine",
+      "description": "Start your daily mobility routine",
+      "url": "/routine",
+      "icons": [{ "src": "/favicon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Training Calendar",
+      "short_name": "Calendar",
+      "description": "View your 18-week training schedule",
+      "url": "/calendar",
+      "icons": [{ "src": "/favicon.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Tools",
+      "short_name": "Tools",
+      "description": "Access training timers and calculators",
+      "url": "/tools",
+      "icons": [{ "src": "/favicon.svg", "sizes": "96x96" }]
+    }
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded"
+  },
+  "display_override": ["window-controls-overlay", "standalone"],
+  "prefer_related_applications": false
+}
