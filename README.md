@@ -2,6 +2,13 @@
 
 Professional Training Management System for Moto3 Pilots - A complete web application for tracking workouts, monitoring recovery, and optimizing performance over an 18-week training cycle.
 
+## 🚀 Deploy Veloce
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Alessandro31-31/preparatoreatleticomoto3app-2955)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Alessandro31-31/preparatoreatleticomoto3app-2955)
+
+**Clicca uno dei pulsanti sopra per deployare in 60 secondi! 🎯**
+
 ## ✨ Features
 
 ### 🏋️ Training Management
