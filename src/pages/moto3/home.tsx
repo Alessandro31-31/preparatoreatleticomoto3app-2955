@@ -16,6 +16,11 @@ import {
   Gauge,
   Target,
   Sparkles,
+  Flame,
+  Snowflake,
+  Calculator,
+  BarChart3,
+  BookOpen,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -215,9 +220,99 @@ export default function Moto3Home() {
         </div>
       </div>
 
+      {/* Preparazione & Recupero */}
+      <div className="px-6 mb-8 max-w-screen-xl mx-auto">
+        <h2 className="text-lg font-semibold mb-4">Preparazione & Recupero</h2>
+        <div className="grid grid-cols-2 gap-3">
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/warmup')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-orange-500/10 text-orange-500 p-3 rounded-xl w-fit mb-3">
+                <Flame className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">Warmup</h3>
+              <p className="text-xs text-muted-foreground">Pre-workout activation</p>
+            </CardContent>
+          </Card>
+
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/cooldown')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-blue-500/10 text-blue-500 p-3 rounded-xl w-fit mb-3">
+                <Snowflake className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">Cooldown</h3>
+              <p className="text-xs text-muted-foreground">Post-workout recovery</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      {/* Strumenti Professionali */}
+      <div className="px-6 mb-8 max-w-screen-xl mx-auto">
+        <h2 className="text-lg font-semibold mb-4">Strumenti Professionali</h2>
+        <div className="grid grid-cols-2 gap-3">
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/timer')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-red-500/10 text-red-500 p-3 rounded-xl w-fit mb-3">
+                <Timer className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">Interval Timer</h3>
+              <p className="text-xs text-muted-foreground">HIIT & Tabata</p>
+            </CardContent>
+          </Card>
+
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/acr-calculator')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-purple-500/10 text-purple-500 p-3 rounded-xl w-fit mb-3">
+                <Calculator className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">ACR Calculator</h3>
+              <p className="text-xs text-muted-foreground">Injury prevention</p>
+            </CardContent>
+          </Card>
+
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/load-tracker')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-teal-500/10 text-teal-500 p-3 rounded-xl w-fit mb-3">
+                <BarChart3 className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">Load Tracker</h3>
+              <p className="text-xs text-muted-foreground">Training load monitor</p>
+            </CardContent>
+          </Card>
+
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/quick-reference')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-slate-500/10 text-slate-500 p-3 rounded-xl w-fit mb-3">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">Quick Reference</h3>
+              <p className="text-xs text-muted-foreground">Protocols & guidelines</p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
       {/* Tools Grid */}
       <div className="px-6 mb-8 max-w-screen-xl mx-auto">
-        <h2 className="text-lg font-semibold mb-4">Training Tools</h2>
+        <h2 className="text-lg font-semibold mb-4">Advanced Tools</h2>
         <div className="grid grid-cols-2 gap-3">
           {tools.map((tool) => {
             const Icon = tool.icon;

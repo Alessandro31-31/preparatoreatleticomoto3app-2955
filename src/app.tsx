@@ -23,6 +23,12 @@ import NutritionDiary from "@/pages/moto3/nutrition";
 import VideoAnalysis from "@/pages/moto3/video-analysis";
 import BikeSetup from "@/pages/moto3/bike-setup";
 import Achievements from "@/pages/moto3/achievements";
+import Warmup from "@/pages/moto3/warmup";
+import Cooldown from "@/pages/moto3/cooldown";
+import Timer from "@/pages/moto3/timer";
+import ACRCalculator from "@/pages/moto3/acr-calculator";
+import LoadTracker from "@/pages/moto3/load-tracker";
+import QuickReference from "@/pages/moto3/quick-reference";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -45,6 +51,16 @@ export function App() {
         <Route path="/moto3/video-analysis" element={<VideoAnalysis />} />
         <Route path="/moto3/bike-setup" element={<BikeSetup />} />
         <Route path="/moto3/achievements" element={<Achievements />} />
+
+        {/* Moto3 Preparation & Recovery */}
+        <Route path="/moto3/warmup" element={<Warmup />} />
+        <Route path="/moto3/cooldown" element={<Cooldown />} />
+
+        {/* Moto3 Professional Tools */}
+        <Route path="/moto3/timer" element={<Timer />} />
+        <Route path="/moto3/acr-calculator" element={<ACRCalculator />} />
+        <Route path="/moto3/load-tracker" element={<LoadTracker />} />
+        <Route path="/moto3/quick-reference" element={<QuickReference />} />
 
         {/* Original Tools Pages */}
         <Route path="/calendar" element={<TrainingCalendar />} />
