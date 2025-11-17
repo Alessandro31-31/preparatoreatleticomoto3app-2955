@@ -226,6 +226,19 @@ export default function Moto3Home() {
         <div className="grid grid-cols-2 gap-3">
           <Card
             className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/morning-routine')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-amber-500/10 text-amber-500 p-3 rounded-xl w-fit mb-3">
+                <Activity className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">Morning Routine</h3>
+              <p className="text-xs text-muted-foreground">12-min daily protocol</p>
+            </CardContent>
+          </Card>
+
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
             onClick={() => navigate('/moto3/warmup')}
           >
             <CardContent className="p-4">
@@ -247,6 +260,45 @@ export default function Moto3Home() {
               </div>
               <h3 className="font-semibold text-sm mb-1">Cooldown</h3>
               <p className="text-xs text-muted-foreground">Post-workout recovery</p>
+            </CardContent>
+          </Card>
+
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/stretching')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-green-500/10 text-green-500 p-3 rounded-xl w-fit mb-3">
+                <Target className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">Stretching</h3>
+              <p className="text-xs text-muted-foreground">Flexibility program</p>
+            </CardContent>
+          </Card>
+
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/foam-rolling')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-red-500/10 text-red-500 p-3 rounded-xl w-fit mb-3">
+                <Activity className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">Foam Rolling</h3>
+              <p className="text-xs text-muted-foreground">Myofascial release</p>
+            </CardContent>
+          </Card>
+
+          <Card
+            className="cursor-pointer hover:shadow-md transition-all active:scale-[0.98]"
+            onClick={() => navigate('/moto3/mobility')}
+          >
+            <CardContent className="p-4">
+              <div className="bg-purple-500/10 text-purple-500 p-3 rounded-xl w-fit mb-3">
+                <Target className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-sm mb-1">Mobility</h3>
+              <p className="text-xs text-muted-foreground">CARs protocol</p>
             </CardContent>
           </Card>
         </div>

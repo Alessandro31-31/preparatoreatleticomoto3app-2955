@@ -28,6 +28,10 @@ const BikeSetup = lazy(() => import("@/pages/moto3/bike-setup"));
 const Achievements = lazy(() => import("@/pages/moto3/achievements"));
 const Warmup = lazy(() => import("@/pages/moto3/warmup"));
 const Cooldown = lazy(() => import("@/pages/moto3/cooldown"));
+const Stretching = lazy(() => import("@/pages/moto3/stretching"));
+const FoamRolling = lazy(() => import("@/pages/moto3/foam-rolling"));
+const Mobility = lazy(() => import("@/pages/moto3/mobility"));
+const MorningRoutine = lazy(() => import("@/pages/moto3/morning-routine"));
 const Timer = lazy(() => import("@/pages/moto3/timer"));
 const ACRCalculator = lazy(() => import("@/pages/moto3/acr-calculator"));
 const LoadTracker = lazy(() => import("@/pages/moto3/load-tracker"));
@@ -65,8 +69,12 @@ export function App() {
         <Route path="/moto3/achievements" element={<Achievements />} />
 
         {/* Moto3 Preparation & Recovery */}
+        <Route path="/moto3/morning-routine" element={<MorningRoutine />} />
         <Route path="/moto3/warmup" element={<Warmup />} />
         <Route path="/moto3/cooldown" element={<Cooldown />} />
+        <Route path="/moto3/stretching" element={<Stretching />} />
+        <Route path="/moto3/foam-rolling" element={<FoamRolling />} />
+        <Route path="/moto3/mobility" element={<Mobility />} />
 
         {/* Moto3 Professional Tools */}
         <Route path="/moto3/timer" element={<Timer />} />
