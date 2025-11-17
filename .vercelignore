@@ -1,0 +1,6 @@
+worker/
+drizzle/
+*.sql
+wrangler.toml
+.wrangler/
+vite.config.ts
