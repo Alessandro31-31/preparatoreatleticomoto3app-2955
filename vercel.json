@@ -1,6 +1,6 @@
 {
-  "buildCommand": "bun run build",
-  "outputDirectory": "dist/client",
+  "buildCommand": "bunx vite build --config vite.config.vercel.ts",
+  "outputDirectory": "dist",
   "installCommand": "bun install",
   "cleanUrls": true,
   "trailingSlash": false,
