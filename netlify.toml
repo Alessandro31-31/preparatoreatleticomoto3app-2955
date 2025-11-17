@@ -1,5 +1,5 @@
 [build]
-  command = "bunx vite build --config vite.config.vercel.ts"
+  command = "npm run build"
   publish = "dist"
 
 [[redirects]]
