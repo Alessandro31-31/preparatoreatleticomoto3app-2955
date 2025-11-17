@@ -22,6 +22,7 @@ import MentalTraining from "@/pages/moto3/mental-training";
 import NutritionDiary from "@/pages/moto3/nutrition";
 import VideoAnalysis from "@/pages/moto3/video-analysis";
 import BikeSetup from "@/pages/moto3/bike-setup";
+import Achievements from "@/pages/moto3/achievements";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -43,6 +44,7 @@ export function App() {
         <Route path="/moto3/nutrition" element={<NutritionDiary />} />
         <Route path="/moto3/video-analysis" element={<VideoAnalysis />} />
         <Route path="/moto3/bike-setup" element={<BikeSetup />} />
+        <Route path="/moto3/achievements" element={<Achievements />} />
 
         {/* Original Tools Pages */}
         <Route path="/calendar" element={<TrainingCalendar />} />
