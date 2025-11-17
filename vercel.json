@@ -1,9 +1,5 @@
 {
-  "buildCommand": "bunx vite build --config vite.config.vercel.ts",
   "outputDirectory": "dist",
-  "installCommand": "bun install",
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
