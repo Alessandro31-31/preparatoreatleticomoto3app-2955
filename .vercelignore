@@ -1,0 +1,8 @@
+node_modules
+.git
+.env.local
+.env
+*.log
+dist/my_react_app
+worker
+drizzle

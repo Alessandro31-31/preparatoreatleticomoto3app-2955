@@ -7,12 +7,23 @@ import visualEditorPlugin from "@runablehq/vite-editor-plugin"
 import { cloudflare } from "@cloudflare/vite-plugin";
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), visualEditorPlugin(), tailwindcss(), cloudflare()],
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    react(),
+    visualEditorPlugin(),
+    tailwindcss(),
+    // Only use Cloudflare plugin in development/cloudflare build
+    ...(mode === 'cloudflare' ? [cloudflare()] : [])
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+  build: {
+    outDir: 'dist/client',
+    emptyOutDir: true,
+    sourcemap: false,
   },
   server: {
     hmr: {
@@ -25,4 +36,4 @@ export default defineConfig({
     // Apply the same host allowance for `vite preview`
     allowedHosts: true,
   },
-});
+}));
