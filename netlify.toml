@@ -1,6 +1,6 @@
 [build]
-  command = "bun run build"
-  publish = "dist/client"
+  command = "bunx vite build --config vite.config.vercel.ts"
+  publish = "dist"
 
 [[redirects]]
   from = "/*"
