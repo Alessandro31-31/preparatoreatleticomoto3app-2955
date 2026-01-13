@@ -1,151 +1,121 @@
-# Minimal Starter
+# 🏍️ MOTO3 TRAINING PRO
 
-A clean, minimal starter template providing the perfect foundation for your next project. Built with modern tools and ready for your creativity.
-
-## ✨ Features
-
-- 🚀 **Modern Stack**: React 19, TypeScript, Vite, Tailwind CSS
-- 🎨 **Beautiful UI**: shadcn/ui components with customizable design tokens
-- 📱 **Responsive**: Mobile-first design with dark/light theme support
-- ⚡ **Performance**: Cloudflare Workers backend with sub-second response times
-- 🗄️ **Database**: Drizzle ORM with D1 database
-- 🧪 **Type Safety**: Comprehensive TypeScript setup
-- 🔧 **Developer Experience**: Hot reload, ESLint, and modern tooling
-
-## 🏗️ Architecture
-
-```
-├── src/                    # Frontend React application
-│   ├── components/         # Reusable UI components
-│   │   └── ui/            # shadcn/ui base components
-│   ├── pages/             # Page components
-│   ├── lib/               # Utilities and helpers
-│   └── styles/            # Global styles and themes
-├── worker/                # Cloudflare Workers backend
-│   ├── routes/            # API routes
-│   └── db/                # Database schema and migrations
-├── public/                # Static assets (Vite standard)
-│   ├── favicon.svg        # Site favicon
-│   └── *.{png,jpg,svg}    # Images, logos, etc.
-└── instructions/          # Documentation for adding features
-```
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- [Bun](https://bun.sh/) (recommended) or Node.js
-- [Cloudflare account](https://cloudflare.com/) for deployment
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd minimal-starter-template
-```
-
-2. Install dependencies:
-```bash
-bun install
-```
-
-3. Set up environment variables:
-```bash
-cp .env.example .env.local
-```
-
-4. Start the development server:
-```bash
-bun run dev
-```
-
-5. Visit `http://localhost:5173` to see your application.
-
-## 📦 Available Scripts
-
-- `bun run dev` - Start development server
-- `bun run build` - Build for production
-- `bun run preview` - Preview production build
-- `bun run pre-deploy` - Generate database migrations
-- `bun run db:generate` - Generate database types
-
-## 🎨 Customization
-
-### Theming
-
-The template uses semantic design tokens defined in `src/styles/global.css`. Customize colors, spacing, and typography by modifying the CSS custom properties.
-
-### Adding New Pages
-
-1. Create a new component in `src/pages/`
-2. Add the route in `src/app.tsx`
-3. Update navigation as needed
-
-### Components
-
-- Reusable components go in `src/components/`
-- Use shadcn/ui as a base for new components
-- Follow the existing patterns for props and styling
-
-## 🌐 Deployment
-
-### Cloudflare Workers
-
-1. Install Wrangler CLI:
-```bash
-bunx wrangler login
-```
-
-2. Configure your environment variables in Wrangler
-3. Deploy:
-```bash
-bun run pre-deploy
-bunx wrangler deploy
-```
-
-### Environment Variables
-
-Key environment variables to configure:
-
-```env
-# Database
-D1_DATABASE_NAME=your-database-name
-
-# Authentication (if enabled)
-BETTER_AUTH_SECRET=your-auth-secret
-VITE_BETTER_AUTH_URL=https://your-domain.com
-
-# Additional services as needed
-```
-
-## 📚 Documentation
-
-- [Database Guide](./instructions/database.md)
-- [Theming](./instructions/theming.md)
-- [Static Assets](./instructions/assets.md)
-- [Authentication](./instructions/authentication.md)
-- [Billing](./instructions/billing.md)
-
-## 🛠️ Development
-
-### Code Style
-
-- TypeScript for type safety
-- ESLint for code quality
-- Semantic HTML and accessibility
-
-### Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-MIT License - see LICENSE file for details.
+Professional training management app for Moto3 pilots. Complete 18-week periodized program.
 
 ---
 
-**Minimal Starter** - Your creative canvas awaits. 🎨
+## 🚀 DEPLOY IN 1 CLICK
+
+### [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FAlessandro31-31%2Fpreparatoreatleticomoto3app-2955&project-name=moto3-training&repository-name=moto3-training-app&build-command=bun%20run%20build&output-directory=dist/client&install-command=bun%20install)
+
+**CLICK SUL BOTTONE SOPRA ☝️** e segui questi passi:
+
+1. Fai login con GitHub (o email)
+2. Click **"Deploy"**
+3. Aspetta 2 minuti
+4. **FATTO!** Riceverai il tuo URL
+
+Poi apri l'URL dal telefono e aggiungi alla home screen! 📱
+
+---
+
+## 📱 FUNZIONALITÀ
+
+### Training Management
+- ✅ **18-Week Calendar** - Periodized mesocycles
+- ✅ **Morning Routine** - 12-min mobility protocol
+- ✅ **Daily Sessions** - Complete workout tracking
+
+### Monitoring & Analytics
+- ✅ **Daily Readiness Check** - Sleep, soreness, stress, energy
+- ✅ **HRV Monitor** - Target ≥55ms
+- ✅ **ACR Calculator** - Injury prevention (0.8-1.3 sweet spot)
+- ✅ **Load Tracking** - RPE × Duration
+
+### Progress & Goals
+- ✅ **Expected Progressions** - Week-by-week targets
+- ✅ **Progress Charts** - Weight, HRV, stiffness, load
+- ✅ **PDF Export** - Complete training reports
+- ✅ **Milestone Tracking** - 5 checkpoints
+
+### Recovery & Preparation
+- ✅ **Warmup Protocol** - 6 Moto3-specific exercises
+- ✅ **Cooldown** - 5 post-training exercises
+- ✅ **Stretching** - 8 dedicated stretches
+- ✅ **Foam Rolling** - 8 muscle zones
+
+### Red Flag System
+- ✅ **Warning Tracking** - Injury, fatigue, HRV drops
+- ✅ **Severity Levels** - Low/Medium/High
+- ✅ **Recommended Actions** - Automatic guidance
+
+### Mobile-First
+- ✅ **Bottom Navigation** - 5-tab layout
+- ✅ **Dark/Light Theme**
+- ✅ **PWA Ready** - Install on home screen
+
+---
+
+## 🏗️ Tech Stack
+
+- **Frontend**: React 19, TypeScript, Vite, Tailwind CSS
+- **UI**: shadcn/ui components
+- **Backend**: Hono on Cloudflare Workers
+- **Database**: Drizzle ORM + D1 (SQLite)
+- **Auth**: Better Auth
+
+---
+
+## 📊 Key Metrics
+
+- **HRV Target**: ≥55ms (optimal recovery)
+- **Stiffness Delta**: ≥2.0 points improvement
+- **ACR Sweet Spot**: 0.8-1.3 (injury prevention)
+- **Session Completion**: >90% target
+
+---
+
+## 🎯 Training Phases (18 Weeks)
+
+1. **Weeks 1-3**: Anatomical Adaptation
+2. **Week 4**: Deload 1
+3. **Weeks 5-7**: Hypertrophy
+4. **Week 8**: Deload 2
+5. **Week 9**: Strength Base
+6. **Weeks 10-11**: Transfer + Power
+7. **Week 12**: Deload 3
+8. **Weeks 13-15**: Peak Transfer
+9. **Week 16**: Taper + Deload
+10. **Weeks 17-18**: Competition Peak 🏆
+
+---
+
+## 📱 Add to Phone Home Screen
+
+### iPhone (Safari):
+1. Open the URL
+2. Tap "Share" button
+3. Tap "Add to Home Screen"
+
+### Android (Chrome):
+1. Open the URL
+2. Tap menu (⋮)
+3. Tap "Add to Home Screen"
+
+---
+
+## 🆘 Need Help?
+
+- Read: `START-HERE.md` for quick start
+- Read: `INSTALLAZIONE-FACILE.md` for detailed guide (Italian)
+- Issues: https://github.com/Alessandro31-31/preparatoreatleticomoto3app-2955/issues
+
+---
+
+## 📄 License
+
+Proprietary - Built for Moto3 athletes
+
+---
+
+**Moto3 Training Pro** - Train like a champion! 🏍️💨
